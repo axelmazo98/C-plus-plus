@@ -1,0 +1,2795 @@
+#ifndef SUBMENUDATOS_H_INCLUDED
+#define SUBMENUDATOS_H_INCLUDED
+
+void SubMenuDatos();
+
+void SubMenuDatos(){
+    int opc;
+    datos reg;
+    while(true){
+        system("cls");
+            system("COLOR E4"); //SE DA UN COLOR DE FONDO Y COLOR A LAS LETRAS
+            dibujarCuadro(0,0,117,24); //SE DIBUJA EL CUADRO PRINCIPAL
+            dibujarCuadro(1,1,115,3); //SE DIBUJA EL CUADRO DEL TITULO
+        gotoxy(51,2);cout<<"MENU DATOS :";
+        gotoxy(40,8);cout<<"1) MOSTRAR RECAUDACION POR CADA PELICULA ";
+        gotoxy(40,9);cout<<"2) MOSTRAR PELICULA MAS TAQUILLERA ";
+        gotoxy(40,10);cout<<"3) MOSTRAR RECAUDACION POR CADA DIRECTOR";
+        gotoxy(40,11);cout<<"4) MOSTRAR DIRECTOR MAS TAQUILLERO";
+        gotoxy(40,12);cout<<"5) RECAUDACION TOTAL DE TEEMOPOLIS";
+        gotoxy(40,13);cout<<"-----------------------------";
+        gotoxy(40,14);cout<<"0) VOLVER AL MENU PRINCIPAL ";
+        gotoxy(40,15);cout<<"SELECCIONE UNA DE LAS OPCIONES : ";
+        cin>>opc;
+        system("cls");
+        switch(opc){
+            case 1:
+                    reg.recaudacionpeliculas();
+            system("pause");
+                    break;
+            case 2:
+                    reg.peliculaMasTaquillera();
+                system("pause");
+                    break;
+            case 3:
+                reg.recaudaciondirector();
+                system("pause");
+                    break;
+            case 4:
+                reg.directormastaquillero();
+                system("pause");
+                    break;
+
+            case 5: reg.RecaudacionCine(); ///funca
+                    system("pause");
+                    break;
+            case 0: return ;
+                    break;
+            default: cout<<"OPCION INCORRECTA! "<<endl;
+                    break;
+        }
+        cout <<endl;
+
+    }
+
+    return ;
+}
+#endif // SUBMENUDATOS_H_INCLUDED
+
+#ifndef SUBMENUDIRECTOR_H_INCLUDED
+#define SUBMENUDIRECTOR_H_INCLUDED
+void SubMenuDirector();
+
+void SubMenuDirector(){
+
+    int opc;
+    director reg;
+    while(true){
+        system("cls");
+
+         system("COLOR E4"); //SE DA UN COLOR DE FONDO Y COLOR A LAS LETRAS
+    dibujarCuadro(0,0,117,24); //SE DIBUJA EL CUADRO PRINCIPAL
+    dibujarCuadro(1,1,115,3); //SE DIBUJA EL CUADRO DEL TITULO
+
+
+
+        gotoxy(51,2);cout<<"MENU DIRECTORES ";
+
+        gotoxy(45,8);cout<<"1) AGREGAR DIRECTOR";
+        gotoxy(45,9);cout<<"2) MOSTRAR DIRECTORES ";
+        gotoxy(45,10);cout<<"3) MODIFICAR DIRECTOR";
+        gotoxy(45,11);cout<<"4) ELIMINAR DIRECTOR";
+        gotoxy(45,12);cout<<"0) VOLVER AL MENU PRINCIPAL ";
+        gotoxy(45,13);cout<<"--------------------------------------";
+        gotoxy(45,14);cout<<"SELECCIONE UNA DE LAS OPCIONES : ";
+        cin>>opc;
+        system("cls");
+        switch(opc){
+            case 1:
+                reg.cargar();
+                if(reg.grabarEnDisco()==1){cout<<"\nREGISTRO AGREGADO"<<endl;}else{cout<<"\nERROR AL GRABAR"<<endl;}
+                system("pause");
+            break;
+            case 2:
+                reg.mostrardirectores();
+                system("pause");
+            break;
+            case 3:
+                reg.ModificarNombre();
+                system("pause");
+            break;
+            case 4:
+                reg.EliminarDeDisco();
+                system("pause");
+            case 0:
+            return ;
+            break;
+            default: cout<<"OPCION INCORRECTA"<<endl;
+                    break;
+        }
+        cout <<endl;
+
+    }
+
+    return ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#endif // SUBMENUDIRECTOR_H_INCLUDED
+
+#ifndef SUBMENUPELICULAS_H_INCLUDED
+#define SUBMENUPELICULAS_H_INCLUDED
+
+void SubMenuPeliculas();
+
+void SubMenuPeliculas(){
+    int opc;
+    pelicula reg;
+    while(true){
+        system("cls");
+            system("COLOR E4"); //SE DA UN COLOR DE FONDO Y COLOR A LAS LETRAS
+            dibujarCuadro(0,0,117,24); //SE DIBUJA EL CUADRO PRINCIPAL
+            dibujarCuadro(1,1,115,3); //SE DIBUJA EL CUADRO DEL TITULO
+        gotoxy(51,2);cout<<"MENU PELICULAS";
+        gotoxy(45,8);cout<<"1) AGREGAR PELICULA ";
+        gotoxy(45,9);cout<<"2) MOSTRAR PELICULAS ";
+        gotoxy(45,10);cout<<"3) MODIFICAR NOMBRE DE PELICULA ";
+        gotoxy(45,11);cout<<"4) ELIMINAR PELICULA ";
+        gotoxy(45,12);cout<<"-----------------------------";
+        gotoxy(45,13);cout<<"0) VOLVER AL MENU PRINCIPAL ";
+        gotoxy(45,14);cout<<"SELECCIONE UNA DE LAS OPCIONES : ";
+        cin>>opc;
+        system("cls");
+        switch(opc){
+
+            case 1://AGREGAR PELICULA
+                reg.cargar();
+                if(reg.grabarEnDisco()==1){cout<<"REGISTRO AGREGADO! ";}else{"ERROR AL GRABAR! ";}
+                system("pause");
+            break;
+
+            case 2://MOSTRAR PELICULAS
+                reg.mostrarPeliculas();
+                system("pause");
+            break;
+            case 3: //ELIMINAR PELICULA
+                reg.ModificarNombrePelicula();
+                system("pause");
+            case 4: //ELIMINAR PELICULA
+                reg.EliminarDeDisco();
+                system("pause");
+            break;
+            case 0: return ;
+                    break;
+            default: cout<<"OPCION INCORRECTA! "<<endl;
+                    break;
+        }
+        cout <<endl;
+
+    }
+
+    return ;
+}
+
+#endif // SUBMENUPELICULAS_H_INCLUDED
+
+#ifndef SUBMENUSALAS_H_INCLUDED
+#define SUBMENUSALAS_H_INCLUDED
+
+void SubMenuSalas();
+
+void SubMenuSalas(){
+    int opc;
+    Salas aux;
+    while(true){
+
+
+        system("cls");
+            system("COLOR E4"); //SE DA UN COLOR DE FONDO Y COLOR A LAS LETRAS
+            dibujarCuadro(0,0,117,24); //SE DIBUJA EL CUADRO PRINCIPAL
+            dibujarCuadro(1,1,115,3); //SE DIBUJA EL CUADRO DEL TITULO
+            gotoxy(51,2);cout<<"MENU SALAS: ";
+
+        gotoxy(45,8);cout<<"1) AGREGAR SALA "<<endl;
+        gotoxy(45,9);cout<<"2) MOSTRAR SALAS "<<endl;
+        gotoxy(45,10);cout<<"3) MODIFICAR BUTACAS "<<endl;
+        gotoxy(45,11);cout<<"4) ELIMINAR SALA "<<endl;
+        gotoxy(45,12);cout<<"-----------------------------"<<endl;
+        gotoxy(45,13);cout<<"0) VOLVER AL MENU PRINCIPAL "<<endl;
+        gotoxy(45,14);cout<<"SELECCIONE UNA DE LAS OPCIONES : ";
+        cin>>opc;
+        system("cls");
+        switch(opc){
+            case 1:
+                aux.cargar();
+                if(aux.grabarEnDisco()==1){cout<<"REGISTRO AGREAGADO! "<<endl;}else{cout<<"ERROR AL GRABAR! "<<endl;}
+                system("pause");
+            break;
+
+            case 2:
+                 estructuraSala("ID SALA","CANTIDAD BUTACAS","BUTACAS DISPONIBLES");//tabla
+                 aux.mostrarDeDisco();
+                system("pause");
+            break;
+            case 3:
+                aux.ModificarButacas();
+                system("pause");
+            break;
+            case 4:
+                aux.EliminarDeDisco();
+                system("pause");
+            break;
+            case 0: return ;
+                    break;
+            default: cout<<"OPCION INCORRECTA! "<<endl;
+                    break;
+        }
+        cout <<endl;
+
+    }
+
+    return ;
+}
+
+#endif // SUBMENUSALAS_H_INCLUDED
+
+#ifndef SUBMENUVENTAS_H_INCLUDED
+#define SUBMENUVENTAS_H_INCLUDED
+
+void SubMenuVentas();
+
+void SubMenuVentas(){
+    int opc;
+    ventas lol;
+    while(true){
+
+
+        system("cls");
+        system("COLOR E4"); //SE DA UN COLOR DE FONDO Y COLOR A LAS LETRAS
+        dibujarCuadro(0,0,117,24); //SE DIBUJA EL CUADRO PRINCIPAL
+        dibujarCuadro(1,1,115,3); //SE DIBUJA EL CUADRO DEL TITULO
+        gotoxy(51,2);cout<<"MENU VENTAS : ";
+
+        gotoxy(45,8);cout<<"1) AGREGAR VENTA ";
+        gotoxy(45,9);cout<<"2) MOSTRAR VENTAS ";
+        gotoxy(45,10);cout<<"3) ELIMINAR VENTAS ";
+        gotoxy(45,11);cout<<"-----------------------------";
+        gotoxy(45,12);cout<<"0) VOLVER AL MENU PRINCIPAL ";
+        gotoxy(45,13);cout<<"SELECCIONE UNA DE LAS OPCIONES : ";
+        cin>>opc;
+        system("cls");
+        switch(opc){
+            case 1: lol.cargar();
+                if(lol.grabarEnDisco()==true)
+            {
+                cout << "REGISTRO AGREGADO! "<<endl;
+            }
+            else
+            {
+                cout <<"ERROR AL AGREGAR REGISTRO! "<<endl;
+            }
+            system("pause");
+                    break;
+            case 2: lol.mostrarVentas();
+                system("pause");
+                    break;
+            case 3:
+                lol.EliminarDeDisco();
+                system("pause");
+            case 0: return;
+                    break;
+
+
+            default: cout<<"OPCION INCORRECTA"<<endl;
+                    break;
+        }
+        cout <<endl;
+
+    }
+
+    return ;
+}
+
+#endif // SUBMENUVENTAS_H_INCLUDED
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="tp parcial 2" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/tp parcial 2" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/tp parcial 2" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="Datos.h" />
+		<Unit filename="Fecha.h" />
+		<Unit filename="decorado.h" />
+		<Unit filename="directores.h" />
+		<Unit filename="funcionesGlobales.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="peliculas.h" />
+		<Unit filename="protofuncionesGlobales.h" />
+		<Unit filename="salas.h" />
+		<Unit filename="submenuconfiguracion.h" />
+		<Unit filename="submenudatos.h" />
+		<Unit filename="submenudirector.h" />
+		<Unit filename="submenupeliculas.h" />
+		<Unit filename="submenusalas.h" />
+		<Unit filename="submenuventas.h" />
+		<Unit filename="ventas.h" />
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>
+
+"C:\Users\Jason\Documents\GitHub\TP_2\tp parcial 2\submenudirector.h"
+"C:\Users\Jason\Documents\GitHub\TP_2\tp parcial 2\ventas.h"
+"C:\Users\Jason\Documents\GitHub\TP_2\tp parcial 2\funcionesGlobales.h"
+"C:\Users\Jason\Documents\GitHub\TP_2\tp parcial 2\directores.h"
+"C:\Users\Jason\Documents\GitHub\TP_2\tp parcial 2\main.cpp"
+"C:\Users\Jason\Documents\GitHub\TP_2\tp parcial 2\submenuventas.h"
+"C:\Users\Jason\Documents\GitHub\TP_2\tp parcial 2\submenupeliculas.h"
+"C:\Users\Jason\Documents\GitHub\TP_2\tp parcial 2\submenudatos.h"
+"C:\Users\Jason\Documents\GitHub\TP_2\tp parcial 2\Fecha.h"
+"C:\Users\Jason\Documents\GitHub\TP_2\tp parcial 2\submenuconfiguracion.h"
+"C:\Users\Jason\Documents\GitHub\TP_2\tp parcial 2\peliculas.h"
+"C:\Users\Jason\Documents\GitHub\TP_2\tp parcial 2\submenusalas.h"
+"C:\Users\Jason\Documents\GitHub\TP_2\tp parcial 2\Datos.h"
+"C:\Users\Jason\Documents\GitHub\TP_2\tp parcial 2\salas.h"
+"C:\Users\Jason\Documents\GitHub\TP_2\tp parcial 2\decorado.h"
+"C:\Users\Jason\Documents\GitHub\TP_2\tp parcial 2\protofuncionesGlobales.h"
+
+# depslib dependency file v1.0
+1655323455 source:c:\users\nahuel\downloads\tp_2-main\tp parcial 2\main.cpp
+	<iostream>
+	<cstdio>
+	<string.h>
+	<cstring>
+	"funcionesGlobales.h"
+	"Fecha.h"
+	"directores.h"
+	"salas.h"
+	"peliculas.h"
+	"ventas.h"
+
+1654887704 c:\users\nahuel\downloads\tp_2-main\tp parcial 2\funcionesglobales.h
+
+1654887704 c:\users\nahuel\downloads\tp_2-main\tp parcial 2\fecha.h
+
+1655322632 c:\users\nahuel\downloads\tp_2-main\tp parcial 2\directores.h
+
+1655323388 c:\users\nahuel\downloads\tp_2-main\tp parcial 2\peliculas.h
+
+1655323231 c:\users\nahuel\downloads\tp_2-main\tp parcial 2\salas.h
+
+1655403479 c:\users\nahuel\downloads\tp_2-main\tp parcial 2\ventas.h
+
+1655686561 source:c:\users\nahuel\downloads\tp_2-main v2\tp parcial 2\main.cpp
+	<iostream>
+	<cstdio>
+	<string.h>
+	<cstring>
+	"funcionesGlobales.h"
+	"Fecha.h"
+	"directores.h"
+	"salas.h"
+	"peliculas.h"
+	"ventas.h"
+
+1654887704 c:\users\nahuel\downloads\tp_2-main v2\tp parcial 2\funcionesglobales.h
+
+1654887704 c:\users\nahuel\downloads\tp_2-main v2\tp parcial 2\fecha.h
+
+1655322632 c:\users\nahuel\downloads\tp_2-main v2\tp parcial 2\directores.h
+
+1655686379 c:\users\nahuel\downloads\tp_2-main v2\tp parcial 2\salas.h
+
+1655686904 c:\users\nahuel\downloads\tp_2-main v2\tp parcial 2\peliculas.h
+
+1655686712 c:\users\nahuel\downloads\tp_2-main v2\tp parcial 2\ventas.h
+
+1656011886 source:c:\users\nahuel\downloads\tp_2-main v3\tp parcial 2\main.cpp
+	<iostream>
+	<cstdio>
+	<string.h>
+	<cstring>
+	"funcionesGlobales.h"
+	"Fecha.h"
+	"directores.h"
+	"salas.h"
+	"peliculas.h"
+	"ventas.h"
+
+1654887704 c:\users\nahuel\downloads\tp_2-main v3\tp parcial 2\funcionesglobales.h
+
+1654887704 c:\users\nahuel\downloads\tp_2-main v3\tp parcial 2\fecha.h
+
+1655322632 c:\users\nahuel\downloads\tp_2-main v3\tp parcial 2\directores.h
+
+1656009463 c:\users\nahuel\downloads\tp_2-main v3\tp parcial 2\salas.h
+
+1656011264 c:\users\nahuel\downloads\tp_2-main v3\tp parcial 2\peliculas.h
+
+1656012401 c:\users\nahuel\downloads\tp_2-main v3\tp parcial 2\ventas.h
+
+1656364343 source:c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\main.cpp
+	<iostream>
+	<cstdio>
+	<string.h>
+	<cstring>
+	"protofuncionesGlobales.h"
+	"Fecha.h"
+	"directores.h"
+	"salas.h"
+	"peliculas.h"
+	"ventas.h"
+	"datos.h"
+	"submenuventas.h"
+	"submenudatos.h"
+	"submenupeliculas.h"
+	"submenudirector.h"
+	"funcionesGlobales.h"
+
+1656447005 c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\funcionesglobales.h
+
+1656364812 c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\fecha.h
+
+1656364488 c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\directores.h
+
+1656441410 c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\salas.h
+
+1656442072 c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\peliculas.h
+
+1656447005 c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\ventas.h
+
+1656365068 c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\submenuventas.h
+
+1656365068 c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\submenudatos.h
+
+1656531269 source:c:\users\jason\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\main.cpp
+	<iostream>
+	<cstdio>
+	<string.h>
+	<cstring>
+	"protofuncionesGlobales.h"
+	"Fecha.h"
+	"directores.h"
+	"salas.h"
+	"peliculas.h"
+	"ventas.h"
+	"datos.h"
+	"submenuventas.h"
+	"submenudatos.h"
+	"submenupeliculas.h"
+	"submenudirector.h"
+	"funcionesGlobales.h"
+
+1656540491 c:\users\jason\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\funcionesglobales.h
+
+1656441767 c:\users\jason\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\fecha.h
+
+1656441767 c:\users\jason\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\directores.h
+
+1656539601 c:\users\jason\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\salas.h
+
+1656539131 c:\users\jason\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\peliculas.h
+
+1656540760 c:\users\jason\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\ventas.h
+
+1656441767 c:\users\jason\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\submenuventas.h
+
+1656441767 c:\users\jason\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\submenudatos.h
+
+1656441767 c:\users\jason\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\submenupeliculas.h
+
+1656542253 c:\users\jason\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\datos.h
+
+1656357783 c:\users\jason\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\submenudirector.h
+
+1656540504 c:\users\jason\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\protofuncionesglobales.h
+
+1656447005 c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\protofuncionesglobales.h
+
+1656441013 c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\datos.h
+
+1656365068 c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\submenupeliculas.h
+
+1656364343 c:\users\axel\documents\github\tp_2\tp_2-main v4\tp_2-main v4\tp parcial 2\submenudirector.h
+
+1656703324 source:c:\users\nahuel\downloads\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\main.cpp
+	<iostream>
+	<cstdio>
+	<string.h>
+	<cstring>
+	"protofuncionesGlobales.h"
+	"Fecha.h"
+	"directores.h"
+	"salas.h"
+	"peliculas.h"
+	"ventas.h"
+	"datos.h"
+	"submenusalas.h"
+	"submenudatos.h"
+	"submenupeliculas.h"
+	"submenudirector.h"
+	"submenuventas.h"
+	"funcionesGlobales.h"
+
+1656704586 c:\users\nahuel\downloads\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\protofuncionesglobales.h
+
+1656543013 c:\users\nahuel\downloads\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\fecha.h
+
+1656703057 c:\users\nahuel\downloads\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\directores.h
+
+1656703057 c:\users\nahuel\downloads\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\salas.h
+
+1656703057 c:\users\nahuel\downloads\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\peliculas.h
+
+1656704642 c:\users\nahuel\downloads\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\ventas.h
+
+1656543013 c:\users\nahuel\downloads\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\datos.h
+
+1656702127 c:\users\nahuel\downloads\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\submenusalas.h
+
+1656543013 c:\users\nahuel\downloads\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\submenudatos.h
+
+1656701792 c:\users\nahuel\downloads\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\submenupeliculas.h
+
+1656543013 c:\users\nahuel\downloads\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\submenudirector.h
+
+1656543013 c:\users\nahuel\downloads\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\submenuventas.h
+
+1656704586 c:\users\nahuel\downloads\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\funcionesglobales.h
+
+1656705803 source:c:\users\nahuel\downloads\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\main.cpp
+	<iostream>
+	<cstdio>
+	<string.h>
+	<cstring>
+	"protofuncionesGlobales.h"
+	"Fecha.h"
+	"directores.h"
+	"salas.h"
+	"peliculas.h"
+	"ventas.h"
+	"datos.h"
+	"submenusalas.h"
+	"submenudatos.h"
+	"submenupeliculas.h"
+	"submenudirector.h"
+	"submenuventas.h"
+	"funcionesGlobales.h"
+
+1656963793 c:\users\nahuel\downloads\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\protofuncionesglobales.h
+
+1656959684 c:\users\nahuel\downloads\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\fecha.h
+
+1656962816 c:\users\nahuel\downloads\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\directores.h
+
+1656962856 c:\users\nahuel\downloads\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\salas.h
+
+1656964938 c:\users\nahuel\downloads\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\peliculas.h
+
+1656964938 c:\users\nahuel\downloads\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\ventas.h
+
+1656959768 c:\users\nahuel\downloads\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\datos.h
+
+1656705803 c:\users\nahuel\downloads\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\submenusalas.h
+
+1656959788 c:\users\nahuel\downloads\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\submenudatos.h
+
+1656962066 c:\users\nahuel\downloads\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\submenupeliculas.h
+
+1656705803 c:\users\nahuel\downloads\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\submenudirector.h
+
+1656962816 c:\users\nahuel\downloads\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\submenuventas.h
+
+1656966222 c:\users\nahuel\downloads\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\funcionesglobales.h
+
+1658265350 source:c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\main.cpp
+	<iostream>
+	<cstdio>
+	<string.h>
+	<cstring>
+	<windows.h>
+	"decorado.h"
+	"protofuncionesGlobales.h"
+	"Fecha.h"
+	"directores.h"
+	"salas.h"
+	"peliculas.h"
+	"ventas.h"
+	"datos.h"
+	"submenusalas.h"
+	"submenudatos.h"
+	"submenupeliculas.h"
+	"submenudirector.h"
+	"submenuventas.h"
+	"funcionesGlobales.h"
+
+1658256347 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\protofuncionesglobales.h
+
+1656966683 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\fecha.h
+
+1658256347 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\directores.h
+
+1658256347 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\salas.h
+
+1658345265 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\peliculas.h
+
+1658264352 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\ventas.h
+
+1658351528 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\datos.h
+
+1658342293 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\submenusalas.h
+
+1658351478 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\submenudatos.h
+
+1658342141 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\submenupeliculas.h
+
+1658343005 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\submenudirector.h
+
+1658343798 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\submenuventas.h
+
+1658351687 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\funcionesglobales.h
+
+1658266626 source:c:\users\axel\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\main.cpp
+	<iostream>
+	<cstdio>
+	<string.h>
+	<cstring>
+	<windows.h>
+	"decorado.h"
+	"protofuncionesGlobales.h"
+	"Fecha.h"
+	"directores.h"
+	"salas.h"
+	"peliculas.h"
+	"ventas.h"
+	"datos.h"
+	"submenusalas.h"
+	"submenudatos.h"
+	"submenupeliculas.h"
+	"submenudirector.h"
+	"submenuventas.h"
+	"funcionesGlobales.h"
+
+1658173286 c:\users\axel\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\protofuncionesglobales.h
+
+1656967348 c:\users\axel\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\fecha.h
+
+1658173763 c:\users\axel\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\directores.h
+
+1658174154 c:\users\axel\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\salas.h
+
+1658368577 c:\users\axel\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\peliculas.h
+
+1658264732 c:\users\axel\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\ventas.h
+
+1658368576 c:\users\axel\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\datos.h
+
+1658368577 c:\users\axel\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\submenusalas.h
+
+1658368577 c:\users\axel\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\submenudatos.h
+
+1658368577 c:\users\axel\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\submenupeliculas.h
+
+1658368577 c:\users\axel\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\submenudirector.h
+
+1658368577 c:\users\axel\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\submenuventas.h
+
+1658368576 c:\users\axel\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\funcionesglobales.h
+
+1658344438 c:\users\jason\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\decorado.h
+
+1658368576 c:\users\axel\documents\github\tp_2\tp_2-main v8\tp_2-main v7\tp_2-main v4\tp_2-main v4\tp parcial 2\decorado.h
+
+1667338791 source:c:\users\jason\documents\github\tp_2\tp parcial 2\main.cpp
+	<iostream>
+	<cstdio>
+	<string.h>
+	<cstring>
+	<windows.h>
+	"decorado.h"
+	"protofuncionesGlobales.h"
+	"Fecha.h"
+	"directores.h"
+	"salas.h"
+	"peliculas.h"
+	"ventas.h"
+	"datos.h"
+	"submenusalas.h"
+	"submenudatos.h"
+	"submenupeliculas.h"
+	"submenudirector.h"
+	"submenuventas.h"
+	"funcionesGlobales.h"
+	"submenuconfiguracion.h"
+
+1667341444 c:\users\jason\documents\github\tp_2\tp parcial 2\decorado.h
+
+1658399433 c:\users\jason\documents\github\tp_2\tp parcial 2\protofuncionesglobales.h
+
+1658399433 c:\users\jason\documents\github\tp_2\tp parcial 2\fecha.h
+
+1664921523 c:\users\jason\documents\github\tp_2\tp parcial 2\directores.h
+
+1667346721 c:\users\jason\documents\github\tp_2\tp parcial 2\salas.h
+
+1667334515 c:\users\jason\documents\github\tp_2\tp parcial 2\peliculas.h
+
+1667346561 c:\users\jason\documents\github\tp_2\tp parcial 2\ventas.h
+
+1658399433 c:\users\jason\documents\github\tp_2\tp parcial 2\datos.h
+
+1667341729 c:\users\jason\documents\github\tp_2\tp parcial 2\submenusalas.h
+
+1658399433 c:\users\jason\documents\github\tp_2\tp parcial 2\submenudatos.h
+
+1667334515 c:\users\jason\documents\github\tp_2\tp parcial 2\submenupeliculas.h
+
+1664918962 c:\users\jason\documents\github\tp_2\tp parcial 2\submenudirector.h
+
+1658399433 c:\users\jason\documents\github\tp_2\tp parcial 2\submenuventas.h
+
+1667346980 c:\users\jason\documents\github\tp_2\tp parcial 2\funcionesglobales.h
+
+1664921430 c:\users\jason\documents\github\tp_2\tp parcial 2\submenuconfiguracion.h
+
+1667343097 source:c:\users\axel\documents\github\tp_2\tp parcial 2\main.cpp
+	<iostream>
+	<cstdio>
+	<string.h>
+	<cstring>
+	<windows.h>
+	"decorado.h"
+	"protofuncionesGlobales.h"
+	"Fecha.h"
+	"directores.h"
+	"salas.h"
+	"peliculas.h"
+	"ventas.h"
+	"datos.h"
+	"submenusalas.h"
+	"submenudatos.h"
+	"submenupeliculas.h"
+	"submenudirector.h"
+	"submenuventas.h"
+	"funcionesGlobales.h"
+	"submenuconfiguracion.h"
+
+1667343097 c:\users\axel\documents\github\tp_2\tp parcial 2\decorado.h
+
+1658413431 c:\users\axel\documents\github\tp_2\tp parcial 2\protofuncionesglobales.h
+
+1658413430 c:\users\axel\documents\github\tp_2\tp parcial 2\fecha.h
+
+1664921743 c:\users\axel\documents\github\tp_2\tp parcial 2\directores.h
+
+1667345779 c:\users\axel\documents\github\tp_2\tp parcial 2\salas.h
+
+1665116341 c:\users\axel\documents\github\tp_2\tp parcial 2\peliculas.h
+
+1667345431 c:\users\axel\documents\github\tp_2\tp parcial 2\ventas.h
+
+1658413430 c:\users\axel\documents\github\tp_2\tp parcial 2\datos.h
+
+1667343097 c:\users\axel\documents\github\tp_2\tp parcial 2\submenusalas.h
+
+1658413431 c:\users\axel\documents\github\tp_2\tp parcial 2\submenudatos.h
+
+1665116203 c:\users\axel\documents\github\tp_2\tp parcial 2\submenupeliculas.h
+
+1664921743 c:\users\axel\documents\github\tp_2\tp parcial 2\submenudirector.h
+
+1658413431 c:\users\axel\documents\github\tp_2\tp parcial 2\submenuventas.h
+
+1667346332 c:\users\axel\documents\github\tp_2\tp parcial 2\funcionesglobales.h
+
+1664921743 c:\users\axel\documents\github\tp_2\tp parcial 2\submenuconfiguracion.h
+
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<FileVersion major="1" minor="0" />
+	<ActiveTarget name="Debug" />
+	<File name="submenudirector.h" open="1" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1050" topLine="18" />
+		</Cursor>
+	</File>
+	<File name="ventas.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2912" topLine="125" />
+		</Cursor>
+	</File>
+	<File name="funcionesGlobales.h" open="1" top="1" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2099" topLine="93" />
+		</Cursor>
+	</File>
+	<File name="directores.h" open="1" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4229" topLine="143" />
+		</Cursor>
+	</File>
+	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="596" topLine="24" />
+		</Cursor>
+	</File>
+	<File name="submenuventas.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="733" topLine="11" />
+		</Cursor>
+	</File>
+	<File name="submenupeliculas.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1437" topLine="8" />
+		</Cursor>
+	</File>
+	<File name="submenudatos.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1441" topLine="7" />
+		</Cursor>
+	</File>
+	<File name="Fecha.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3512" topLine="104" />
+		</Cursor>
+	</File>
+	<File name="submenuconfiguracion.h" open="1" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2469" topLine="35" />
+		</Cursor>
+	</File>
+	<File name="peliculas.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="6528" topLine="190" />
+		</Cursor>
+	</File>
+	<File name="submenusalas.h" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1334" topLine="12" />
+		</Cursor>
+	</File>
+	<File name="Datos.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5067" topLine="171" />
+		</Cursor>
+	</File>
+	<File name="salas.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3967" topLine="141" />
+		</Cursor>
+	</File>
+	<File name="decorado.h" open="1" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="881" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="protofuncionesGlobales.h" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="266" topLine="0" />
+		</Cursor>
+	</File>
+</CodeBlocks_layout_file>
+
+#ifndef VENTAS_H_INCLUDED
+#define VENTAS_H_INCLUDED
+
+class ventas
+{
+    private:
+
+      int butacastotal=0,butacasvendidas=0,butacassala=0,Nventa, CantEntradas, Importe=150, Pago,fila,asiento, idPelicula;
+      fechaAct fecha;
+      int Total;
+       Salas aux;
+       pelicula obj;
+       bool estado;
+    public:
+        ///sets()
+      void setidPelicula (int id){idPelicula=id;}
+      void setNventa (int Nv){Nventa=Nv;}
+      void setCantEntradas (int CantE){CantEntradas=CantE;}
+      void setImporte (int Imp){Importe=Imp;}
+      void setPago (int P){Pago=P;}
+      void setFecha(fechaAct F) {fecha=F;}
+      void setEstado(bool e){estado=e;}
+      ///gets()
+      int getidPelicula(){return idPelicula;}
+      int getNventa (){return Nventa;}
+      int getCantEntradas (){return CantEntradas;}
+      int getImporte (){return Importe;}
+      int getTotal (){return Total;}
+      int getPago (){return Pago;}
+      fechaAct getFecha () {return fecha;}
+
+      bool getEstado(){return estado;}
+      ///disco
+
+      void EliminarDeDisco();
+      int ModificarEnDisco(int pos);
+      int grabarEnDisco();
+      int leerEnDisco(int);
+      bool recuventa();
+      bool backupventa();
+      int LeerDeDiscobkp(int pos);
+
+    bool cargarVentas()
+      {
+          FILE *p;
+          bool escribio;
+          ventas reg;
+          p=fopen("ventas.dat","ab");
+          if (p==NULL) return false;
+              cargar();
+              escribio=fwrite(this,sizeof reg, 1,p);
+              fclose(p);
+              return escribio;
+
+      }
+
+
+
+void mostrarVentas()
+{
+    FILE *p;
+    p=fopen("ventas.dat","rb");
+    if (p==NULL) return;
+    while(fread(this,sizeof (ventas),1,p)==1)
+    {
+        mostrar();
+    }
+    fclose(p);
+}
+
+
+void cargar(){
+    estado=true;
+    Nventa=autonumerico()+1;
+    cout<<"NUMERO DE VENTA : "<<Nventa<<endl;
+    cout<<"INGRESE EL ID DE LA PELICULA: " <<endl;//falta validacion
+    cin>>idPelicula;
+    fechaPelicula(idPelicula);
+    fecha.Cargar();
+    int diaAct=getFecha().getDia();
+    int mesAct=getFecha().getMes();
+    int anioAct=getFecha().getAnio();
+    while(validacionFecha(idPelicula,diaAct,mesAct,anioAct)==0){
+        cout <<"LA FECHA INGRESADA NO ES CORRECTA"<< endl;
+        system("pause");
+        system("cls");
+        fechaPelicula(idPelicula);
+        fecha.Cargar();
+        diaAct=getFecha().getDia();
+        mesAct=getFecha().getMes();
+        anioAct=getFecha().getAnio();
+    }
+    while(validacionPrecio(idPelicula, Pago)==0){
+        cout <<"EL ID INGRESADO NO EXISTE! "<< endl;
+        system("pause");
+        system("cls");
+        cout<<"INGRESE EL ID DE LA PELICULA: " <<endl;
+        cin>>idPelicula;
+    }
+
+    butacassala=cantButacasSala(idPelicula);
+    butacasvendidas=calcularVentas(idPelicula);
+    butacastotal=butacassala-butacasvendidas;
+    cout<<"CANTIDAD DE BUTACAS DISPONIBLES:"<<butacastotal<<endl;
+    if(butacastotal<=0){
+        cout<<"LA SALA YA SE ENCUENTRA COMPLETA"<<endl;
+        system("pause");
+        system("cls");
+        return cargar();
+
+    }
+     cout<<"INGRESE CANTIDAD DE ENTRADAS: ";
+    cin>>CantEntradas;
+    while(CantEntradas<10){
+        cout <<" SE PUEDEN COMPRAR HASTA 10 ENTRADAS! "<< endl;
+        system("pause");
+        system("cls");
+        cout<<"INGRESE LA CANTIDAD DE ENTRADAS: " <<endl;
+        cin>>CantEntradas;
+    }
+    while(CantEntradas>butacastotal){
+         cout <<"NO HAY SUFICIENTES BUTACAS!"<< endl;
+        cout<<"CANTIDAD DE BUTACAS DISPONIBLES:"<<butacastotal<<endl;
+        system("pause");
+        system("cls");
+        cout<<"INGRESE LA CANTIDAD DE ENTRADAS: " <<endl;
+        cin>>CantEntradas;
+
+
+    }
+    cout<<endl;
+    cout<<"INGRESE METODO DE PAGO [(1=EFECTIVO) (2=CREDITO) (3=DEBITO)]"<<endl;
+    cin >>Pago;
+    cout<<"EL IMPORTE ES DE: ";
+    Total=validacionPrecio(idPelicula, Pago);
+    Total=Total*CantEntradas;
+    cout<< Total<<endl;
+
+
+}
+
+
+void mostrar()
+{
+    if(estado==true)
+    {
+    cout<<"ID DE LA PELICULA: ";
+    cout<<idPelicula<<endl;
+    cout<<"NUMERO DE VENTA: "<<Nventa<<endl;
+    cout<<"CANTIDAD DE ENTRADAS: ";
+    cout<<CantEntradas<<endl;
+    cout<<"METODO DE PAGO: ";
+    cout<<Pago<<endl;
+    cout<<"IMPORTE: ";
+    cout<< Total<<endl;
+    fecha.Mostrar();
+    cout <<" "<<endl<<endl;
+    }
+
+}
+
+};
+void ventas::EliminarDeDisco(){
+       int pos=0;
+       int idV;
+        cout<<"INTRODUZCA EL ID DE VENTA A ELIMINAR: ";cin>>idV;
+        while(leerEnDisco(pos)==1){
+                if(getNventa()==idV){
+                        cout<<"EL ID DE VENTA TIENE LOS SIGUIENTES DATOS"<<endl;
+                        mostrar();
+                        cout<<endl<<endl;
+                        setEstado(false);
+                        if(ModificarEnDisco(pos)==1){cout<<"REGISTRO ELIMINADO! ";}
+                }
+            pos++;
+        }
+
+}
+int ventas::ModificarEnDisco(int pos)
+{
+
+    FILE *p;
+    p=fopen("ventas.dat","rb+");
+    if (p==NULL) return -1;
+    fseek(p,sizeof(ventas)*pos,0);
+    int escribio=fwrite(this,sizeof(ventas),1,p);
+    fclose(p);
+    return escribio;
+}
+int ventas::grabarEnDisco()
+{
+    FILE *p;
+    p=fopen("ventas.dat","ab");
+    if (p==NULL) return -1;
+    int escribio=fwrite(this,sizeof(ventas),1,p);
+    fclose(p);
+    return escribio;
+}
+
+int ventas::leerEnDisco(int pos)
+{
+    FILE *p;
+    p=fopen("ventas.dat","rb");
+    if (p==NULL) return -1;
+    fseek(p,sizeof(ventas)*pos,0);
+    int leyo=fread(this,sizeof(ventas),1,p);
+    fclose(p);
+    return leyo;
+}
+///BACKUP
+int ventas::LeerDeDiscobkp(int pos){
+    FILE *A;
+        A=fopen("backup/ventas.bkp","rb");
+            if(A==NULL){cout<<"ERROR DE LECTURA!";return-1;}
+    fseek(A,sizeof(ventas)*pos,0);
+    int leyo=fread(this,sizeof(ventas),1,A);
+    fclose(A);
+    return leyo;
+
+
+}
+
+bool ventas::backupventa(){
+
+int pos=0;
+FILE *b;
+    b=fopen("backup/ventas.bkp","wb");
+    if(b==NULL){return false;}
+    while(leerEnDisco(pos)==1){
+        fwrite(this,sizeof(ventas),1,b);
+        pos++;
+    }
+    fclose(b);
+    if(pos==0){return false;}
+    return true;
+}
+ bool ventas::recuventa(){
+int pos=0;
+FILE *br;
+    br=fopen("ventas.dat","wb");
+    if(br==NULL){return false;}
+    while(LeerDeDiscobkp(pos)==1){
+        fwrite(this,sizeof(ventas),1,br);
+        pos++;
+    }
+    fclose(br);
+    if(pos==0){return false;}
+    return true;
+
+ }
+
+
+
+
+
+#endif // VENTAS_H_INCLUDED
+
+#ifndef DATOS_H_INCLUDED
+#define DATOS_H_INCLUDED
+
+class datos
+{
+private:
+    int recaudacionTotal=0;
+    int recaudacionTotalCine=0;
+    int idRecaudado;
+    int idtaquillera;
+    int totalpeliculataquillera=0;
+    float recaudacionporpelicula=0;
+    char nombrePelicula[30];
+    char nombreDirector[30];
+
+    ventas reg;
+    pelicula aux;
+    director obj;
+public:
+    ///sets
+    void setNombrePelicula (const char *Np){strcpy(nombrePelicula,Np);}
+    void setRecaudacionporpelicula(int rt){recaudacionporpelicula=rt;}
+    void setRecaudacionTotal(int rt){recaudacionTotal=rt;}
+    void setIdRecaudado(int idR){idRecaudado=idR;}
+    void setRecaudacionTotalCine(int rtc){recaudacionTotalCine=rtc;}
+    void setNombreDirector (const char *Nd){strcpy(nombreDirector,Nd);}
+
+    ///gets
+    float getrecaudacionporpelicula(){return recaudacionporpelicula;}
+    int getRecaudacionTotal(){return recaudacionTotal;}
+    int getIdRecaudado(){return idRecaudado;}
+    int getRecaudacionTotalCine(){return recaudacionTotalCine;}
+    const char *getnombreDirector (){return nombreDirector;}
+    ///funciones
+
+
+
+
+    void Mostrar(){
+        cout<<nombrePelicula<<endl;
+        cout<<recaudacionporpelicula<<endl;
+
+    }
+    void MostrarDirector(){
+         cout<<nombreDirector<<endl;
+        cout<<recaudacionporpelicula<<endl;
+    }
+    //////////////////////////////PUNTO 1///////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+float recpeli(int id){
+    int pos=0;
+    float canttotal=0;
+        while(aux.leerEnDisco(pos++)==1){
+                if(aux.getidPelicula()==id){
+                    canttotal+=calcularRecaudacion(aux.getidPelicula());
+                }
+
+            }
+            return canttotal;
+
+    }
+   void recaudacionpeliculas(){
+
+
+            int pos=0;
+        while(aux.leerEnDisco(pos++)==1){
+                if(aux.getEstado()==true){
+                    cout<<aux.getNombrePelicula()<<" RECAUDO UN TOTAL DE "<<recpeli(aux.getidPelicula())<<" PESOS"<<endl<<endl;
+                }
+
+
+
+        }
+
+    }
+
+//////////////////////////////PUNTO 2///////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+int IDmastaquillero(int ID){
+    ventas reg;
+    int pos=0;
+    int acumImporte=0;
+    while(reg.leerEnDisco(pos++)==1){
+        if(reg.getidPelicula()==ID){
+            acumImporte+=reg.getTotal();
+
+        }
+    }
+    return acumImporte;
+}
+
+
+int contarpeliculas(){
+    int pos=0;
+    int tam=0;
+    while(aux.leerEnDisco(pos++)==1){
+            if(aux.getEstado()==true){
+                    tam+=1;
+            }
+
+    }
+    return tam;
+}
+void peliculaMasTaquillera()
+{   int max=0,posmax=0;
+    datos *vDinamico;
+    int cantpeliculas=contarpeliculas();
+    vDinamico=new datos[cantpeliculas];
+    if(vDinamico==NULL)return;
+
+    for(int i=0;i<cantpeliculas;i++){
+        aux.leerEnDisco(i);
+        vDinamico[i].setNombrePelicula(aux.getNombrePelicula());
+        vDinamico[i].setRecaudacionporpelicula(IDmastaquillero(aux.getidPelicula()));
+
+    }
+    max=vDinamico[0].getrecaudacionporpelicula();
+    for(int i=0;i<cantpeliculas;i++){
+
+        if(vDinamico[i].getrecaudacionporpelicula()>max){
+            max=vDinamico[i].getrecaudacionporpelicula();
+            posmax=i;
+        }
+
+    }
+
+    for(int i=0;i<cantpeliculas;i++){
+        if(posmax==i){
+            vDinamico[posmax].Mostrar();
+        }
+    }
+
+    delete vDinamico;
+
+}
+
+
+//////////////////////////////PUNTO 3///////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+ float recdir(int id){
+    int pos=0;
+    float canttotal=0;
+        while(aux.leerEnDisco(pos++)==1){
+                if(aux.getidDirector()==id){
+                    canttotal+=calcularRecaudacion(aux.getidPelicula());
+                }
+
+            }
+            return canttotal;
+
+    }
+    void recaudaciondirector(){
+            int pos=0;
+        while(obj.leerEnDisco(pos++)==1){
+                if(obj.getEstado()==true){
+                    cout<<"EL DIRECTOR "<<obj.getnombreDirector()<<" RECAUDO UN TOTAL DE "<<recdir(obj.getidDirector())<<" PESOS"<<endl<<endl;
+                }
+
+
+
+        }
+
+    }
+
+float calcularRecaudacion (int id)
+{
+    float sumaRecaudacion=0;
+    int pos=0;
+    while (reg.leerEnDisco(pos++))
+    {
+        if(reg.getidPelicula()==id)
+        {
+            sumaRecaudacion+=reg.getTotal();
+        }
+
+    }
+    return(float)sumaRecaudacion;
+}
+//////////////////////////////////PUNTO 4//////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+int contardirectores(){
+    int pos=0;
+    int tam=0;
+    while(obj.leerEnDisco(pos++)==1){
+            if(obj.getEstado()==true){
+                    tam+=1;
+            }
+
+    }
+    return tam;
+}
+
+void directormastaquillero()
+{   int max=0,posmax=0;
+    datos *vDinamico;
+    int cantdirectores=contardirectores();
+    vDinamico=new datos[cantdirectores];
+    if(vDinamico==NULL)return;
+
+    for(int i=0;i<cantdirectores;i++){
+        obj.leerEnDisco(i);
+        vDinamico[i].setNombreDirector(obj.getnombreDirector());
+        vDinamico[i].setRecaudacionporpelicula(recdir(obj.getidDirector()));
+
+    }
+    max=vDinamico[0].getrecaudacionporpelicula();
+    for(int i=0;i<cantdirectores;i++){
+
+        if(vDinamico[i].getrecaudacionporpelicula()>max){
+            max=vDinamico[i].getrecaudacionporpelicula();
+            posmax=i;
+        }
+
+    }
+
+    for(int i=0;i<cantdirectores;i++){
+        if(posmax==i){
+            vDinamico[posmax].MostrarDirector();
+        }
+    }
+
+    delete vDinamico;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////////////////PUNTO 5//////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+void RecaudacionCine()
+{
+    int totalRecaudado=0;
+    int pos=0;
+    while(reg.leerEnDisco(pos++)==1)
+    {
+        setRecaudacionTotalCine(reg.getTotal());
+        totalRecaudado+=getRecaudacionTotalCine();
+    }
+    cout<<"LA RECAUDACION TOTAL DEL CINE FUE DE: "<<totalRecaudado<<endl;
+}
+
+
+
+};
+
+
+
+
+#endif // DATOS_H_INCLUDED
+
+#ifndef DECORADO_H_INCLUDED
+#define DECORADO_H_INCLUDED
+void gotoxy(int x, int y){
+     HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
+    COORD poss;
+    poss.X = x;
+    poss.Y = y;
+
+    SetConsoleCursorPosition(handle,poss);
+
+}
+
+//FUNCION QUE DIBUJA EL CUADRO
+void dibujarCuadro(int x1,int y1,int x2,int y2){
+    int i;
+
+    for (i=x1;i<x2;i++){
+        gotoxy(i,y1); cout << "\304"; //linea horizontal superior
+        gotoxy(i,y2); cout << "\304"; //linea horizontal inferior
+    }
+
+    for (i=y1;i<y2;i++){
+        gotoxy(x1,i); cout <<"\263"; //linea vertical izquierda
+        gotoxy(x2,i); cout <<"\263"; //linea vertical derecha
+    }
+
+    gotoxy(x1,y1); cout<< "\332";
+    gotoxy(x1,y2); cout<< "\300";
+    gotoxy(x2,y1); cout<< "\277";
+    gotoxy(x2,y2); cout<< "\331";
+}
+void estructuraSala(string option1,string option2,string option3)
+{
+    dibujarCuadro(1,1,115,3);
+    gotoxy(10,2);cout<<option1;//"IDSALA";
+                 gotoxy(50,2);cout<<option2;//"BUTACAS TOTALES";
+                 gotoxy(90,2); cout<<option3;//"BUTACAS DISPONIBLES";
+
+}
+
+
+#endif // DECORADO_H_INCLUDED
+
+#ifndef DIRECTORES_H_INCLUDED
+#define DIRECTORES_H_INCLUDED
+
+class director
+{
+    private:
+      int idDirector;
+      char nombreDirector[30], Nacionalidad[20];
+      Fecha FechaNacimiento;
+       bool estado;
+    public:
+        ///sets()
+      void setidDirector (int idD){idDirector=idD;}
+      void setnombreDirector (const char *Nd){strcpy(nombreDirector,Nd);}
+      void setNacionalidad (const char *N){strcpy(Nacionalidad,N);}
+      void setFechaNacimiento(Fecha F) {FechaNacimiento=F;}
+      void setEstado(bool e){estado=e;}
+      ///gets()
+      int getidDirector (){return idDirector;}
+      const char *getnombreDirector (){return nombreDirector;}
+      const char *getNacionalidad (){return Nacionalidad;}
+      Fecha getFechaNacimiento () {return FechaNacimiento;}
+      bool getEstado(){return estado;}
+      ///disco
+      void EliminarDeDisco();
+      void ModificarNombre();
+      int ModificarEnDisco(int pos);
+      void mostrarDeDisco();
+      int grabarEnDisco();
+      int leerEnDisco(int);
+      bool backupdirector();
+      bool recudirector();
+      int LeerDeDiscobkp(int pos);
+
+void cargar()
+{
+    estado=true;
+    fflush(stdin);
+    cout<<"INGRESAR EL ID DE DIRECTOR"<<endl;
+    cin >>idDirector;
+    while(validacionDir(idDirector)==1){
+        cout <<" TIENE ESE ID "<< endl;
+        system("pause");
+        system("cls");
+        cout<<"INGRESE EL ID DEL DIRECTOR : " <<endl;
+        cin>>idDirector;
+    }
+    cin.ignore();
+    cout<<"INGRESAR EL NOMBRE DEL DIRECTOR " <<endl;
+    cin.getline(nombreDirector,30,'\n');
+    fflush(stdin);
+    cout<<"INGRESE LA NACIONALIDAD DEL DIRECTOR"<<endl;
+
+    cin.getline(Nacionalidad,20,'\n');
+    fflush(stdin);
+    cout<<"FECHA DE NACIMIENTO DEL DIRECTOR"<<endl;
+    FechaNacimiento.Cargar();
+}
+void mostrar()
+{
+    if(estado==true)
+    {
+    cout<<"ID: ";
+    cout<<idDirector<<endl;
+    cout<<"NOMBRE DEL DIRECTOR: ";
+    cout<<nombreDirector<<endl;
+    cout<<"NACIONALIDAD: ";
+    cout<<Nacionalidad<<endl;
+    cout<<"FECHA DE NACIMIENTO: ";
+    FechaNacimiento.Mostrar();
+    }
+    cout<< endl;
+
+}
+
+void mostrardirectores()
+{
+    FILE *p;
+    p=fopen("director.dat","rb");
+    if (p==NULL) return;
+    while(fread(this,sizeof (director),1,p)==1)
+    {
+        mostrar();
+    }
+    fclose(p);
+}
+
+};
+
+
+
+///DISCO
+void director::EliminarDeDisco(){
+       int pos=0;
+       int idD;
+        cout<<"INTRODUZCA EL ID DE DIRECTOR A ELIMINAR: ";cin>>idD;
+        while(leerEnDisco(pos)==1){
+                if(getidDirector()==idD){
+                        cout<<"EL ID DE DIRECTOR TIENE LOS SIGUIENTES DATOS"<<endl;
+                        mostrar();
+                        cout<<endl<<endl;
+                        setEstado(false);
+                        if(ModificarEnDisco(pos)==1){cout<<"REGISTRO ELIMINADO! ";}
+                }
+            pos++;
+        }
+
+}
+int director::ModificarEnDisco(int pos)
+{
+
+    FILE *p;
+    p=fopen("director.dat","rb+");
+    if (p==NULL) return -1;
+    fseek(p,sizeof(director)*pos,0);
+    int escribio=fwrite(this,sizeof(director),1,p);
+    fclose(p);
+    return escribio;
+}
+int director::grabarEnDisco()
+{
+    FILE *p;
+    p=fopen("director.dat","ab");
+    if (p==NULL) return -1;
+    int escribio=fwrite(this,sizeof(director),1,p);
+    fclose(p);
+    return escribio;
+}
+
+int director::leerEnDisco(int pos)
+{
+    FILE *p;
+    p=fopen("director.dat","rb");
+    if (p==NULL) return -1;
+    fseek(p,sizeof(director)*pos,0);
+    int leyo=fread(this,sizeof(director),1,p);
+    fclose(p);
+    return leyo;
+}
+
+///BACKUP
+int director::LeerDeDiscobkp(int pos){
+    FILE *A;
+        A=fopen("backup/director.bkp","rb");
+            if(A==NULL){cout<<"ERROR DE LECTURA!";return-1;}
+    fseek(A,sizeof(director)*pos,0);
+    int leyo=fread(this,sizeof(director),1,A);
+    fclose(A);
+    return leyo;
+
+
+}
+void director::ModificarNombre(){
+        int pos=0;
+        char N[20];
+        int I;
+        cout<<"INTRODUCE EL ID DE DIRECTOR A LISTAR: ";cin>>I;
+        while(leerEnDisco(pos)==1){
+             if(getidDirector()==I){
+                    if(getEstado()==true){
+                       cout<<"NOMBRE : "<<getnombreDirector()<<endl;
+                        cout<<"NACIONALIDAD : "<<getNacionalidad()<<endl;
+                cout<<"INTRODUCE UN NUEVO NOMBRE PARA EL DIRECTOR: ";cin>>N;
+                           setnombreDirector(N);
+                    if(ModificarEnDisco(pos)==1){cout<<"NOMBRE MODIFICADO!"<<endl;}
+                        cout<<endl<<endl;
+                    }
+
+                }
+                pos++;
+        }
+
+
+    }
+bool director::backupdirector(){
+
+int pos=0;
+FILE *b;
+    b=fopen("backup/director.bkp","wb");
+    if(b==NULL){return false;}
+    while(leerEnDisco(pos)==1){
+        fwrite(this,sizeof(director),1,b);
+        pos++;
+    }
+    fclose(b);
+    if(pos==0){return false;}
+    return true;
+}
+ bool director::recudirector(){
+int pos=0;
+FILE *br;
+    br=fopen("director.dat","wb");
+    if(br==NULL){return false;}
+    while(LeerDeDiscobkp(pos)==1){
+        fwrite(this,sizeof(director),1,br);
+        system("pause");
+        pos++;
+    }
+    fclose(br);
+    if(pos==0){return false;}
+    return true;
+
+ }
+
+
+
+#endif // DIRECTORES_H_INCLUDED
+
+#ifndef FECHA_H_INCLUDED
+#define FECHA_H_INCLUDED
+
+class Fecha{
+private:///es accesible dentro de la clase
+    int dia, mes, anio;///propiedades
+public:///es accesible dentro y fuera de la clase
+    Fecha(int d=0, int m=0, int a=0){
+        this->dia=d;
+        this->mes=m;
+        this->anio=a;
+    }
+    ///gets() funciones de la clase que permiten hacer conocer al exterior de la clase el valor de cada prop.
+    int getDia(){return dia;}
+    int getMes(){return mes;}
+    int getAnio(){return anio;}
+    ///sets() funciones que permiten modificar los valores de cada una de las propiedades
+    void setDia(int d){dia=d;}
+    void setMes(int m){mes=m;}
+    void setAnio(int a){anio=a;}
+
+
+    void Cargar();
+    void Mostrar();
+    int modificarEnDiscoFecha(int);
+    void Mostrar_this(){
+        cout<<this<<endl;
+    }
+
+};
+
+void Fecha::Cargar(){
+        int d, m, a;
+
+        cout<<"INGRESE EL DIA: ";
+        cin>>d;
+        cout<<"INGRESE EL MES: ";
+        cin>>m;
+        cout<<"INGRESE EL ANIO: ";
+        cin>>a;
+        setDia(d);
+        setMes(m);
+        setAnio(a);
+
+    }
+
+void Fecha::Mostrar(){
+        cout<<dia<<"/"<<mes<<"/"<<anio<<endl;
+
+    }
+
+class fechaFin
+{
+private:///es accesible dentro de la clase
+    int dia, mes, anio;///propiedades
+public:///es accesible dentro y fuera de la clase
+    fechaFin(int d=0, int m=0, int a=0){
+        this->dia=d;
+        this->mes=m;
+        this->anio=a;
+    }
+    ///gets() funciones de la clase que permiten hacer conocer al exterior de la clase el valor de cada prop.
+    int getDia(){return dia;}
+    int getMes(){return mes;}
+    int getAnio(){return anio;}
+    ///sets() funciones que permiten modificar los valores de cada una de las propiedades
+    void setDia(int d){dia=d;}
+    void setMes(int m){mes=m;}
+    void setAnio(int a){anio=a;}
+
+
+    void Cargar();
+    void Mostrar();
+    int modificarEnDiscoFecha(int);
+    void Mostrar_this(){
+        cout<<this<<endl;
+    }
+
+};
+
+
+
+void fechaFin::Cargar(){
+        int d, m, a;
+
+        cout<<"INGRESE EL DIA: ";
+        cin>>d;
+        cout<<"INGRESE EL MES: ";
+        cin>>m;
+        cout<<"INGRESE EL ANIO: ";
+        cin>>a;
+        setDia(d);
+        setMes(m);
+        setAnio(a);
+
+    }
+
+void fechaFin::Mostrar(){
+        cout<<dia<<"/"<<mes<<"/"<<anio<<endl;
+
+    }
+class fechaAct
+{
+      private:///es accesible dentro de la clase
+    int dia, mes, anio;///propiedades
+public:///es accesible dentro y fuera de la clase
+    fechaAct(int d=0, int m=0, int a=0){
+        this->dia=d;
+        this->mes=m;
+        this->anio=a;
+    }
+    ///gets() funciones de la clase que permiten hacer conocer al exterior de la clase el valor de cada prop.
+    int getDia(){return dia;}
+    int getMes(){return mes;}
+    int getAnio(){return anio;}
+    ///sets() funciones que permiten modificar los valores de cada una de las propiedades
+    void setDia(int d){dia=d;}
+    void setMes(int m){mes=m;}
+    void setAnio(int a){anio=a;}
+
+
+    void Cargar();
+    void Mostrar();
+    int modificarEnDiscoFecha(int);
+    void Mostrar_this(){
+        cout<<this<<endl;
+    }
+
+};
+
+void fechaAct::Cargar(){
+        int d, m, a;
+
+        cout<<"INGRESE EL DIA: ";
+        cin>>d;
+        cout<<"INGRESE EL MES: ";
+        cin>>m;
+        cout<<"INGRESE EL ANIO: ";
+        cin>>a;
+        setDia(d);
+        setMes(m);
+        setAnio(a);
+
+    }
+
+void fechaAct::Mostrar(){
+        cout<<dia<<"/"<<mes<<"/"<<anio<<endl;
+
+    }
+
+#endif // FECHA_H_INCLUDED
+
+#ifndef FUNCIONESGLOBALES_H_INCLUDED
+#define FUNCIONESGLOBALES_H_INCLUDED
+
+void cargarCadena(char *pal, int tam);
+
+///FIN PROTOTIPOS
+
+void cargarCadena(char *pal, int tam)
+{
+    int i;
+    fflush(stdin);
+    for(i=0;i<tam;i++)
+    {
+        pal[i]=cin.get();
+        if (pal[i]=='\n')break;
+    }
+    pal[i]='\0';
+    fflush(stdin);
+}
+int validacionIDpelicula(int id)
+{
+    pelicula reg;
+        int pos=0;
+        while(reg.leerEnDisco(pos++)==1){
+            if(reg.getidPelicula()==id){
+
+                     return 1;
+
+            }
+        }
+    return 0;
+}
+int validacionDir(int id){
+    director aux;
+        int pos=0;
+        while(aux.leerEnDisco(pos++)==1){
+            if(aux.getidDirector()==id&&aux.getEstado()==true){
+                    cout<<"DIRECTOR:"<<aux.getnombreDirector();
+                     return 1;
+
+            }
+        }
+    return 0;
+
+
+}
+int validacionSala(int id){
+    Salas aux;
+    int pos=0;
+        while(aux.leerEnDisco(pos++)==1)
+        {
+            if(aux.getidSala()==id){
+                    return 1;
+
+        }
+
+        }
+        return 0;
+}
+int validacionPrecio(int id, int pago){
+ ventas aux;
+ pelicula obj;
+ Salas reg;
+ int importe;
+ int pos=0;
+
+ while (obj.leerEnDisco(pos++)==1)
+ {
+     if(obj.getidPelicula()==id){
+        importe=obj.getPrecio();
+        if(pago==1){
+            importe=importe*0.95;
+        }else if(pago==2){
+            importe=importe*1.20;
+        }else{
+
+            importe=importe*1.05;
+        }
+
+        return importe;
+     }
+ }
+return 0;
+
+}
+int NomDir(int id){
+    director aux;
+        int pos=0;
+        while(aux.leerEnDisco(pos++)==1){
+            if(aux.getidDirector()==id){
+                    cout<<"DIRECTOR:"<<aux.getnombreDirector();
+                    return 1;
+
+            }
+        }
+        return 0;
+}
+
+int calcularVentas(int id){
+    ventas obj;
+    pelicula reg;
+    int ventas=0;
+    int pos=0;
+    int pos2=0;
+        while(reg.leerEnDisco(pos++)==1){
+
+            if(reg.getSala()==id){
+                    while(obj.leerEnDisco(pos2++)==1){
+                            if(obj.getidPelicula()==reg.getidPelicula()){
+                    ventas+=obj.getCantEntradas();
+                    }
+
+                   }
+
+            }
+
+
+
+        }
+return ventas;
+
+}
+
+void fechaPelicula(int id){
+    pelicula reg;
+    int pos=0;
+        int diaFin,mesFin,anioFin;
+        int diaIni,mesIni,anioIni;
+    while(reg.leerEnDisco(pos++)==1){
+        if(reg.getidPelicula()==id){
+                cout<<"ELIJA UNA FECHA  VALIDA "<<endl;
+                    diaIni=reg.getFechaIni().getDia();
+                    mesIni=reg.getFechaIni().getMes();
+                    anioIni=reg.getFechaIni().getAnio();
+
+                    diaFin=reg.getFechaFin().getDia();
+                    mesFin=reg.getFechaFin().getMes();
+                    anioFin=reg.getFechaFin().getAnio();
+
+                    cout<<"INICIO DE PROYECION:"<<diaIni<<"/"<<mesIni<<"/"<<anioIni<<endl;
+                    cout<<"FINAL DE PROYECION :"<<diaFin<<"/"<<mesFin<<"/"<<anioFin<<endl;
+
+
+        }
+    }
+}
+int validacionFecha(int id, int dia, int mes, int anio)
+{
+    pelicula reg;
+        int pos=0, fechaIni, fechaFin, fechaActual;
+        while(reg.leerEnDisco(pos++)==1){
+            if(reg.getidPelicula()==id){
+                    fechaIni=(reg.getFechaIni().getAnio()*10000)+(reg.getFechaIni().getMes()*100)+reg.getFechaIni().getDia();
+                    fechaFin=(reg.getFechaFin().getAnio()*10000)+(reg.getFechaFin().getMes()*100)+reg.getFechaFin().getDia();
+                    fechaActual=(anio*10000)+(mes*100)+dia;
+                    if(fechaActual>=fechaIni && fechaActual<=fechaFin)
+        {
+            return 1;
+        }
+        else
+        {
+            return 0;
+        }
+            }
+
+        }
+
+
+return -1;
+}
+int autonumerico(){
+ventas obj;
+int pos=0;
+int c=0;
+    while(obj.leerEnDisco(pos++)==1){
+       c++;
+    }
+
+    return c;
+
+}
+int calcularPlazas(int id,int dia, int mes, int anio){
+    ventas obj;
+    int canttotal=0;
+    int pos=0;
+    int diaIni,mesIni,anioIni;
+        while(obj.leerEnDisco(pos++)==1){
+                if(obj.getidPelicula()==id){
+                    diaIni=obj.getFecha().getDia();
+                    mesIni=obj.getFecha().getMes();
+                    anioIni=obj.getFecha().getAnio();
+                    if(anio==anioIni&&mes==mesIni&&dia==diaIni){
+                        canttotal+=obj.getCantEntradas();
+                    }
+
+                }
+
+        }
+
+    return canttotal;
+}
+int cantButacasSala(int id){
+    pelicula reg;
+    Salas aux;
+    int cantbutacas=0;
+        int pos=0;
+        int pos2=0;
+    while(reg.leerEnDisco(pos++)==1){
+        if(reg.getidPelicula()==id){
+
+            while(aux.leerEnDisco(pos2++)==1){
+                if(aux.getidSala()==reg.getSala()){
+                    cantbutacas=aux.getPlazas();
+                    return cantbutacas;
+
+                }
+
+
+
+            }
+
+        }
+    }
+return 0;
+
+}
+
+
+
+#endif // FUNCIONESGLOBALES_H_INCLUDED
+
+#include <iostream>
+#include <cstdio>
+#include <string.h>
+#include <cstring>
+#include <windows.h>
+using namespace std;
+#include "decorado.h"
+#include "protofuncionesGlobales.h"
+#include "Fecha.h"
+#include "directores.h"
+#include "salas.h"
+#include "peliculas.h"
+#include "ventas.h"
+#include "datos.h"
+#include "submenusalas.h"
+#include "submenudatos.h"
+#include "submenupeliculas.h"
+#include "submenudirector.h"
+#include "submenuventas.h"
+#include "funcionesGlobales.h"
+#include "submenuconfiguracion.h"
+
+
+
+
+int main(){
+    int opc;
+    director obj;
+    ventas lol;
+
+    while(true){
+    system("COLOR E4"); //SE DA UN COLOR DE FONDO Y COLOR A LAS LETRAS
+    dibujarCuadro(0,0,117,24); //SE DIBUJA EL CUADRO PRINCIPAL
+    dibujarCuadro(1,1,115,3); //SE DIBUJA EL CUADRO DEL TITULO
+
+        gotoxy(51,2); printf("MENU PRINCIPAL "); //// 10 puntos
+        gotoxy(45,8);cout<<"1) MENU DIRECTORES "<<endl;
+        gotoxy(45,9);cout<<"2) MENU SALAS "<<endl;
+        gotoxy(45,10);cout<<"3) MENU PELICULAS"<<endl;
+        gotoxy(45,11);cout<<"4) MENU VENTAS ENTRADAS"<<endl;
+        gotoxy(45,12);cout<<"5) MENU DATOS"<<endl;
+        gotoxy(45,13);cout<<"6) MENU CONFIGURACION"<<endl;
+        gotoxy(45,14);cout<<"-----------------------------"<<endl;
+        gotoxy(45,15);cout<<"0) FIN DEL PROGRAMA "<<endl;
+        gotoxy(45,16);cout<<"SELECCIONE UNA DE LAS OPCIONES : ";
+        cin>>opc;
+        system("cls");
+        switch(opc){
+            case 1: SubMenuDirector();
+
+                    break;
+            case 2: SubMenuSalas();
+                break;
+            case 3: SubMenuPeliculas();
+                    break;
+            case 4: SubMenuVentas();
+                    break;
+            case 5: SubMenuDatos();
+                    break;
+            case 6: SubmenuConfiguracion();
+                    break;
+            case 0: return 0;
+                    break;
+            default: cout<<"OPCION INCORRECTA"<<endl;
+                    break;
+        }
+        cout <<endl;
+
+    }
+
+    return 0;
+}
+
+#ifndef PELICULAS_H_INCLUDED
+#define PELICULAS_H_INCLUDED
+
+class pelicula
+{
+    private:
+      int idPelicula,idDirector, duracion, precio, sala, idioma;
+      char nombrePelicula[30], genero[20], formato[3];
+      Fecha fechaIni;
+      fechaFin fin;
+      director direc;
+      Salas salaNum;
+       bool estado;
+    public:
+        ///sets()
+      void setidPelicula (int idP){idPelicula=idP;}
+      void setidDirector (int idD) {idDirector=idD;}
+      void setFormato (const char *f) {strcpy(formato,f);}
+      void setIdioma (int I) {idioma=I;}
+      void setDuracion (int d) {duracion=d;}
+      void setPrecio (int p) {precio=p;}
+      void setSala (int s) {sala=s;}
+      void setFechaIni (Fecha I) {fechaIni=I;}
+      void setFechaFin(fechaFin FI) {fin=FI;}
+      void setNombrePelicula (const char *Np){strcpy(nombrePelicula,Np);}
+      void setGenero (const char *g){strcpy(genero,g);}
+      void setEstado(bool e){estado=e;}
+      ///gets()
+      int getidPelicula (){return idPelicula;}
+      int getidDirector () {return idDirector;}
+      const char *getFormato () {return formato;}
+      int getIdioma() {return idioma;}
+      int getDuracion () {return duracion;}
+      int getPrecio () {return precio;}
+      int getSala () {return sala;}
+      const char *getNombrePelicula (){return nombrePelicula;}
+      const char *getGenero (){return genero;}
+      Fecha getFechaIni () {return fechaIni;}
+      fechaFin getFechaFin () {return fin;}
+      bool getEstado(){return estado;}
+      ///disco
+      int ModificarEnDisco(int pos);
+      void EliminarDeDisco();
+      int grabarEnDisco();
+      int leerEnDisco(int);
+      void ModificarNombrePelicula();
+      int LeerDeDiscobkp(int pos);
+      bool backuppelicula();
+      bool recupelicula();
+
+      bool cargarPeliculas()
+      {
+          FILE *p;
+          bool escribio;
+          pelicula reg;
+          p=fopen("pelicula.dat","ab");
+          if (p==NULL) return false;
+              cargar();
+              escribio=fwrite(this,sizeof reg, 1,p);
+              fclose(p);
+              return escribio;
+
+      }
+
+void mostrarPeliculas()
+{
+    FILE *p;
+    p=fopen("pelicula.dat","rb");
+    if (p==NULL) return;
+    while(fread(this,sizeof (pelicula),1,p)==1)
+    {
+        mostrar();
+    }
+    fclose(p);
+}
+
+void cargar()
+{
+    precio=500;
+    estado=true;
+
+    //cin.getline(nombreDirector,30,'\n');
+    fflush(stdin);
+
+
+
+    cout<<"INGRESE ID: "<<endl;
+    cin>> idPelicula;
+    while(validacionIDpelicula(idPelicula)==1){
+        cout <<"\n EL ID INGRESADO YA EXISTE! "<< endl;
+        system("pause");
+        system("cls");
+        cout<<"INGRESE EL ID DE LA PELICULA : " <<endl;
+        cin>>idPelicula;
+    }
+    cin.ignore();
+    cout<<"INGRESE EL NOMBRE DE LA PELICULA: " << endl;
+    cin.getline(nombrePelicula,30,'\n');
+    fflush(stdin);
+
+    cout <<"INGRESE EL GENERO: "<<endl;
+    cin.getline(genero,20,'\n');
+    fflush(stdin);
+
+    cout<<"INGRESE EL FORMATO (2D,3D): "<<endl;
+    cin.getline(formato,3,'\n');
+    fflush(stdin);
+
+    cout<<"INGRESE EL IDIOMA [ (1=Castellano) , (2=subtitulado) ] :"<<endl;
+    cin>>idioma;
+    fflush(stdin);
+
+    cout<<"INGRESE LA DURACION [minutos]: "<<endl;
+    cin>>duracion; ///en minutos
+
+    cout<<"INGRESE EL ID DEL DIRECTOR: "<<endl;
+    cin>>idDirector; /// si el id de director ya existe, no cargar nada mas, en cambio si no existe, cargar los datos del directos
+    while(validacionDir(idDirector)==0){
+        cout<<"ESTE DIRECTOR NO SE ENCUENTRA EN LOS REGISTROS"<<endl;
+        system("pause");
+        system("cls");
+        cout<<"INGRESE EL ID DEL DIRECTOR: "<<endl;
+        cin>>idDirector;
+    }
+    cout<<endl;
+
+    cout<<"INGRESAR LA EMISION INICIAL DE LA PELICULA:"<<endl;
+    fechaIni.Cargar();
+    cout<<"INGRESAR LA EMISION FINAL DE LA PELICULA:"<<endl;
+    fin.Cargar();
+    cout<<"INGRESE EL ID DE LA SALA DONDE VER LA PELICULA"<<endl;
+    cin>>sala;
+    while(validacionSala(sala)==0){
+        cout<<"ESTA ID DE SALA NO EXISTE"<<endl;
+        cout<<"INGRESE EL ID DE LA SALA DONDE VER LA PELICULA"<<endl;
+        cin>>sala;
+    }
+    if(strcmp(formato,"3D")==0 || strcmp(formato,"3d")==0){
+        precio+=100;
+    }
+    cout<<"PRECIO DE LA ENTRADA: "<<precio<<endl;
+
+}
+void mostrar()
+{
+    if(estado==true)
+    {
+       cout<<"ID DE LA PELICULA: "<<idPelicula<<endl;
+        cout<<"NOMBRE DE LA PELICULA: ";
+        cout<<nombrePelicula<<endl;
+        cout<<"GENERO: ";
+        cout<<genero<<endl;
+        cout<<"FORMATO: ";
+        cout<<formato<<endl;
+        cout<<"IDIOMA: ";
+        cout<<idioma<<endl;
+        cout<<"DURACION: ";
+        cout<<duracion<<" MINUTOS"<<endl;
+        validacionDir(idDirector);
+        cout<<endl;
+        cout<<"FECHA INICIAL DE LA PROYECCION: ";
+        fechaIni.Mostrar();
+        cout<<"FECHA FINAL DE LA PROYECCION: ";
+        fin.Mostrar();
+        cout<<"NUMERO DE SALAS ASIGNADAS:"<<sala<<endl;
+        cout<<"PRECIO DE LA ENTRADA: ";
+        cout<<precio<<endl;
+        cout<<""<<endl<<endl;
+
+    }
+
+
+}
+};
+void pelicula::EliminarDeDisco(){
+       int pos=0;
+       int id;
+        cout<<"INTRODUZCA EL ID DE PELICULA A ELIMINAR: ";cin>>id;
+        while(leerEnDisco(pos)==1){
+                if(getidPelicula()==id){
+                        cout<<"EL ID DE PELICULA TIENE LOS SIGUIENTES DATOS"<<endl;
+                        mostrar();
+                        cout<<endl<<endl;
+                        setEstado(false);
+                        if(ModificarEnDisco(pos)==1){cout<<"REGISTRO ELIMINADO! ";}
+                }
+            pos++;
+        }
+
+}
+int pelicula::ModificarEnDisco(int pos)
+{
+
+    FILE *p;
+    p=fopen("pelicula.dat","rb+");
+    if (p==NULL) return -1;
+    fseek(p,sizeof(pelicula)*pos,0);
+    int escribio=fwrite(this,sizeof(pelicula),1,p);
+    fclose(p);
+    return escribio;
+}
+int pelicula::grabarEnDisco()
+{
+    FILE *p;
+    p=fopen("pelicula.dat","ab");
+    if (p==NULL) return -1;
+    int escribio=fwrite(this,sizeof(pelicula),1,p);
+    fclose(p);
+    return escribio;
+}
+
+int pelicula::leerEnDisco(int pos)
+{
+    FILE *p;
+    p=fopen("pelicula.dat","rb");
+    if (p==NULL) return -1;
+    fseek(p,sizeof(pelicula)*pos,0);
+    int leyo=fread(this,sizeof(pelicula),1,p);
+    fclose(p);
+    return leyo;
+}
+
+void pelicula::ModificarNombrePelicula(){
+        int pos=0;
+        char peli[30];
+        int Id;
+        cout<<"INTRODUCE EL ID DE DIRECTOR A LISTAR: ";cin>>Id;
+        while(leerEnDisco(pos)==1){
+             if(getidPelicula()==Id){
+                    if(getEstado()==true){
+                       cout<<"NOMBRE DE LA PELICULA : "<<getNombrePelicula()<<endl;
+                        cout<<"GENERO: "<<getGenero()<<endl;
+                        cout<<"FORMATO: "<<getFormato()<<endl;
+                        cout<<"IDIOMA: "<<getIdioma()<<endl;
+                        cout<<"DURACION : "<<getDuracion()<<endl;
+                cout<<"INTRODUCE UN NUEVO NOMBRE DE LA PELICULA: ";cin>>peli;
+                           setNombrePelicula(peli);
+                    if(ModificarEnDisco(pos)==1){cout<<"NOMBRE MODIFICADO!"<<endl;}
+                        cout<<endl<<endl;
+                    }
+
+                }
+                pos++;
+        }
+
+
+    }
+
+///BACKUP
+int pelicula::LeerDeDiscobkp(int pos){
+    FILE *A;
+        A=fopen("backup/pelicula.bkp","rb");
+            if(A==NULL){cout<<"ERROR DE LECTURA!";return-1;}
+    fseek(A,sizeof(pelicula)*pos,0);
+    int leyo=fread(this,sizeof(pelicula),1,A);
+    fclose(A);
+    return leyo;
+
+
+}
+
+bool pelicula::backuppelicula(){
+
+int pos=0;
+FILE *b;
+    b=fopen("backup/pelicula.bkp","wb");
+    if(b==NULL){return false;}
+    while(leerEnDisco(pos)==1){
+        fwrite(this,sizeof(pelicula),1,b);
+        pos++;
+    }
+    fclose(b);
+    if(pos==0){return false;}
+    return true;
+}
+ bool pelicula::recupelicula(){
+int pos=0;
+FILE *br;
+    br=fopen("pelicula.dat","wb");
+    if(br==NULL){return false;}
+    while(LeerDeDiscobkp(pos)==1){
+        fwrite(this,sizeof(pelicula),1,br);
+        pos++;
+    }
+    fclose(br);
+    if(pos==0){return false;}
+    return true;
+
+ }
+
+
+#endif // PELICULAS_H_INCLUDED
+
+#ifndef PROTOFUNCIONESGLOBALES_H_INCLUDED
+#define PROTOFUNCIONESGLOBALES_H_INCLUDED
+//PROTOTIPOS
+int validacionIDpelicula(int id);
+int validacionDir(int id);
+
+int validacionSala(int id);
+
+int validacionPrecio(int id, int pago);
+
+int NomDir(int id);
+
+int calcularVentas(int id);
+int validacionFecha(int id, int dia, int mes, int anio);
+int autonumerico();
+void fechaPelicula(int id);
+int calcularPlazas(int id, int dia, int mes, int anio);
+int cantButacasSala(int id);
+
+//int VentaAutonumerica();
+#endif // PROTOFUNCIONESGLOBALES_H_INCLUDED
+
+#ifndef SALAS_H_INCLUDED
+#define SALAS_H_INCLUDED
+
+class Salas{
+private:
+    int idSala;
+    int tipo;
+    int c=1;
+    int plazas;
+    bool estado;
+
+public:
+     ///sets()
+
+     void setidSala(int S){idSala=S;}
+     void setTipo(int T){tipo=T;}
+     void setEstado(bool e){estado=e;}
+     void setPlazas(int P){plazas=P;}
+
+     ///gets()
+
+     int getidSala(){return idSala;}
+     int getTipo(){return tipo;}
+     int getPlazas(){return plazas;}
+     bool getEstado(){return estado;}
+
+
+    ///disco
+      void EliminarDeDisco();
+      int ModificarEnDisco(int pos);
+      int grabarEnDisco();
+      void ModificarButacas();
+      int leerEnDisco(int);
+      void mostrarDeDisco();
+      int LeerDeDiscobkp(int);
+      bool backupsala();
+      bool recusala();
+
+       bool cargarSalas()
+      {
+          FILE *s;
+          bool escribio;
+          Salas reg;
+          s=fopen("salas.dat","ab");
+          if (s==NULL) return false;
+              cargar();
+              escribio=fwrite(this,sizeof reg, 1,s);
+              fclose(s);
+              return escribio;
+
+      }
+/*
+void mostrarSalas()
+{
+    FILE *s;
+    s=fopen("salas.dat","rb");
+    if (s==NULL) return;
+    while(fread(this,sizeof (Salas),1,s)==1)
+    {
+        mostrarSalaCine();
+    }
+    fclose(s);
+}
+*/
+
+
+
+void cargar(){
+    estado=true;
+    cout<<"INGRESE EL ID DE LA SALA: ";cin>>idSala;
+        while(validacionSala(idSala)==1){
+        cout <<" ESTE ID DE SALA YA EXISTE! "<< endl;
+        system("pause");
+        system("cls");
+        cout<<"INGRESE EL ID DE SALA: " <<endl;
+        cin>>idSala;
+    }
+    cout<<"INGRESE LA CANTIDAD DE BUTACAS:";cin>>plazas;
+}
+void  mostrar(int y){
+    if(estado==true)
+       {
+           //gotoxy(10,2);gotoxy(50,2);gotoxy(90,2);
+
+
+
+
+
+       }
+
+}
+
+};
+void Salas::EliminarDeDisco(){
+       int pos=0;
+       int idS;
+       int y=4;
+        cout<<"INTRODUZCA EL ID DE SALA A ELIMINAR: ";cin>>idS;
+        while(leerEnDisco(pos)==1){
+                if(getidSala()==idS){
+                        cout<<"EL ID DE SALA TIENE LOS SIGUIENTES DATOS"<<endl;
+                        mostrar(y);
+                        cout<<endl<<endl;
+                        setEstado(false);
+                        if(ModificarEnDisco(pos)==1){cout<<"REGISTRO ELIMINADO! ";}
+                }
+            pos++;
+        }
+
+}
+
+void Salas::ModificarButacas(){
+        int pos=0;
+        int Id, butaca;
+        int y=4;
+        cout<<"INTRODUCE EL ID DE SALA A LISTAR: ";cin>>Id;
+        while(leerEnDisco(pos)==1){
+             if(getidSala()==Id){
+                    if(getEstado()==true){
+                       /*cout<<"BUTACAS TOTALES: "<<getPlazas()<<endl;
+                       cout<<"BUTACAS DISPONIBLES: "<<getPlazas()<<endl;
+                       */
+                       estructuraSala("ID SALA","CANTIDAD BUTACAS","BUTACAS DISPONIBLES");
+                       mostrar(y);
+                cout<<"INTRODUCE UNA NUEVA CANTIDAD DE BUTACAS: ";cin>>butaca;
+                           setPlazas(butaca);
+                    if(ModificarEnDisco(pos)==1){cout<<"BUTACA MODIFICADA!"<<endl;}
+                        cout<<endl<<endl;
+                    }
+
+                }
+                pos++;
+        }
+    }
+
+
+int Salas::ModificarEnDisco(int pos)
+{
+
+    FILE *s;
+    s=fopen("salas.dat","rb+");
+    if (s==NULL) return -1;
+    fseek(s,sizeof(Salas)*pos,0);
+    int escribio=fwrite(this,sizeof(Salas),1,s);
+    fclose(s);
+    return escribio;
+}
+int Salas::grabarEnDisco()
+{
+    FILE *s;
+    s=fopen("salas.dat","ab");
+    if (s==NULL) return -1;
+    int escribio=fwrite(this,sizeof(Salas),1,s);
+    fclose(s);
+    return escribio;
+}
+
+int Salas::leerEnDisco(int pos)
+{
+    FILE *s;
+    s=fopen("salas.dat","rb");
+    if (s==NULL) return -1;
+    fseek(s,sizeof(Salas)*pos,0);
+    int leyo=fread(this,sizeof(Salas),1,s);
+    fclose(s);
+    return leyo;
+}
+void Salas::mostrarDeDisco(){
+    int pos=0;
+    int y=4;
+    while(leerEnDisco(pos++)==1){
+
+        //gotoxy(56,y);mostrar(y);
+        //cout<<endl;
+        gotoxy(12,y);cout<<idSala<<endl;
+
+           gotoxy(56,y);cout<<plazas<<endl;
+
+           plazas-=calcularVentas(idSala);
+           gotoxy(98,y);cout<<plazas<<endl;
+        y+=4;
+    }
+
+
+
+}
+
+///BACKUP
+
+
+
+
+int Salas::LeerDeDiscobkp(int pos){
+    FILE *A;
+        A=fopen("backup/salas.bkp","rb");
+            if(A==NULL){cout<<"ERROR DE LECTURA!";return-1;}
+    fseek(A,sizeof(Salas)*pos,0);
+    int leyo=fread(this,sizeof(Salas),1,A);
+    fclose(A);
+    return leyo;
+
+
+}
+
+bool Salas::backupsala(){
+
+int pos=0;
+FILE *b;
+    b=fopen("backup/salas.bkp","wb");
+    if(b==NULL){return false;}
+    while(leerEnDisco(pos)==1){
+        fwrite(this,sizeof(Salas),1,b);
+        pos++;
+    }
+    fclose(b);
+    if(pos==0){return false;}
+    return true;
+}
+ bool Salas::recusala(){
+int pos=0;
+FILE *br;
+    br=fopen("salas.dat","wb");
+    if(br==NULL){return false;}
+    while(LeerDeDiscobkp(pos)==1){
+        fwrite(this,sizeof(Salas),1,br);
+
+        pos++;
+    }
+    fclose(br);
+    if(pos==0){return false;}
+    return true;
+
+ }
+
+
+
+
+
+
+#endif // SALAS_H_INCLUDED
+
+#ifndef SUBMENUCONFIGURACION_H_INCLUDED
+#define SUBMENUCONFIGURACION_H_INCLUDED
+
+void SubmenuConfiguracion();
+
+ void SubmenuConfiguracion(){
+   director aux;
+   pelicula obj;
+   Salas salaux;
+   ventas reg;
+     int opc;
+     while(true){
+            system("COLOR E4"); //SE DA UN COLOR DE FONDO Y COLOR A LAS LETRAS
+            dibujarCuadro(0,0,117,24); //SE DIBUJA EL CUADRO PRINCIPAL
+            dibujarCuadro(1,1,115,3); //SE DIBUJA EL CUADRO DEL TITULO
+
+
+ gotoxy(51,2);cout<<"MENU CONFIGURACION";
+ gotoxy(40,9);cout<<"1) COPIA DE SEGURIDAD DEL ARCHIVO DE DIRECTORES";
+ gotoxy(40,10);cout<<"2) COPIA DE SEGURIDAD DEL ARCHIVO SALAS";
+ gotoxy(40,11);cout<<"3) COPIA DE SEGURIDAD DEL ARCHIVO PELICULAS";
+ gotoxy(40,12);cout<<"4) COPIA DE SEGURIDAD DEL ARCHIVO VENTAS";
+ gotoxy(40,14);cout<<"5) RESTAURAR DATOS DE DIRECTORES";
+  gotoxy(40,15);cout<<"6) RESTAURAR DATOS DE SALAS";
+  gotoxy(40,16);cout<<"7) RESTAURAR DATOS DE PELICULAS";
+  gotoxy(40,17);cout<<"8) RESTAURAR DATOS DE VENTAS";
+ gotoxy(40,18);cout<<"--------------------------------";
+ gotoxy(40,19);cout<<"0) VOLVER AL MENU PRINCIPAL";
+  gotoxy(40,20);cout<<"SELECCIONE UNA DE LAS OPCIONES: ";
+        cin>>opc;
+        system("cls");
+        system("COLOR E4"); //SE DA UN COLOR DE FONDO Y COLOR A LAS LETRAS
+            dibujarCuadro(0,0,117,24); //SE DIBUJA EL CUADRO PRINCIPAL
+            dibujarCuadro(1,1,115,3); //SE DIBUJA EL CUADRO DEL TITULO
+            gotoxy(51,2);cout<<"MENU CONFIGURACION";
+            gotoxy(47,12);
+        switch (opc)
+        {
+        case 1:
+
+            if(aux.backupdirector()==true){cout<<"COPIA DE DIRECTOR REALIZADA";}
+            break;
+        case 2:
+
+            if(salaux.backupsala()==true){cout<<"COPIA DE SALA REALIZADA";}
+            break;
+        case 3:
+
+            if(obj.backuppelicula()==true){cout<<"COPIA DE PELICULA REALIZADA";}
+            break;
+        case 4:
+
+            if(reg.backupventa()==true){cout<<"COPIA DE VENTA REALIZADA;";}
+            break;
+        case 5:
+
+            if(aux.recudirector()==true){cout<<"RECUPERACION  DE DIRECTORES REALIZADA";}
+            break;
+        case 6:
+
+            if(salaux.recusala()==true){cout<<"RECUPERACION DE SALAS  REALIZADA";}
+            break;
+        case 7:
+
+            if(obj.recupelicula()==true){cout<<"RECUPERACION DE PELICULAS REALIZADA";}
+            break;
+            case 8:
+
+            if(reg.recuventa()==true){cout<<"RECUPERACION DE VENTAS REALIZADA";}
+            break;
+        case 0:
+                return;
+            break;
+
+        default:
+            break;
+        }
+        cout <<endl;
+        gotoxy(47,13);
+        system("pause");
+        system("cls");
+
+}
+
+
+ }
+
+
+#endif // SUBMENUCONFIGURACION_H_INCLUDED
