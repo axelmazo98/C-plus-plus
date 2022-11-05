@@ -1,0 +1,2200 @@
+#ifndef SUBMENUCLIENTE_H_INCLUDED
+#define SUBMENUCLIENTE_H_INCLUDED
+
+void subMenuCli();
+
+void subMenuCli(){
+
+int opc;
+Cliente reg;
+
+    while(true){
+        system("cls");
+        cout<<"MENU CLIENTES"<<endl;
+        cout<<"-----------------------------"<<endl;
+        cout<<"1) AGREGAR CLIENTE "<<endl;
+        cout<<"2) LISTAR CLIENTES POR DNI"<<endl;
+        cout<<"3) LISTAR TODOS LOS CLIENTES "<<endl;
+        cout<<"4) MODIFICAR FECHA DE NACIMIENTO "<<endl;
+        cout<<"5) ELIMINAR CLIENTE"<<endl;
+        cout<<"-----------------------------"<<endl;
+        cout<<"0) VOLVER AL MENU PRINCIPAL "<<endl;
+        cout<<"SELECCIONE UNA DE LAS OPCIONES"<<endl;
+        cin>>opc;
+        system("cls");
+        switch(opc){
+            case 1:
+                system("cls");
+                reg.cargar();
+                  if(reg.grabarEnDisco()==true)
+            {
+                cout << "registro agregado"<<endl;
+            }
+            else
+            {
+                cout <<"No se pudo agregar el registro"<<endl;
+            }
+
+                    break;
+            case 2:
+                system("cls");
+                    reg.listarClientesDNI();
+
+                    break;
+            case 3:
+                system("cls");
+                reg.mostrarClientes();
+                    break;
+            case 4:
+                system("cls");
+                reg.modificarFecha();
+                    break;
+            case 5:
+                system("cls");
+                reg.BajaCliente();
+                    break;
+            case 0: return ;
+                    break;
+            default: cout<<"OPCION INCORRECTA"<<endl;
+                    break;
+        }
+        cout <<endl;
+        system("pause");
+    }
+
+
+
+
+
+}
+
+#endif // SUBMENUCLIENTE_H_INCLUDED
+
+#ifndef SUBMENUCONFIGURACION_H_INCLUDED
+#define SUBMENUCONFIGURACION_H_INCLUDED
+
+ void SubmenuConfiguracion();
+
+ void SubmenuConfiguracion(){
+    Articulo art;
+    Cliente cli;
+    Ventas vent;
+     int opc;
+     while(true){
+
+
+
+cout<<"MENU CONFIGURACION"<<endl;
+cout<<"------------------"<<endl;
+cout<<"1) COPIA DE SEGURIDAD DEL ARCHIVO DE CLIENTES"<<endl;
+cout<<"2) COPIA DE SEGURIDAD DEL ARCHIVO DE ARTICULOS"<<endl;
+cout<<"3) COPIA DE SEGURIDAD DEL ARCHIVO DE VENTAS"<<endl;
+cout<<"4) RESTAURAR EL ARCHIVO DE CLIENTES"<<endl;
+cout<<"5) RESTAURAR EL ARCHIVO DE ARTICULOS"<<endl;
+cout<<"6) RESTAURAR EL ARCHIVO DE VENTAS"<<endl;
+cout<<"7) ESTABLECER DATOS DE INICIO"<<endl;
+cout<<"--------------------------------"<<endl;
+cout<<"0) VOLVER AL MENU PRINCIPAL"<<endl;
+ cout<<"SELECCIONE UNA DE LAS OPCIONES"<<endl;
+        cin>>opc;
+        system("cls");
+
+        switch (opc)
+        {
+        case 1:
+             system("cls");
+            if(cli.backupclientes()==true){cout<<"COPIA REALIZADA";}
+            break;
+        case 2:
+            system("cls");
+            if(art.backuparticulos()==true){cout<<"COPIA REALIZADA";}
+            break;
+        case 3:
+            system("cls");
+            if(vent.backupventas()==true){cout<<"COPIA REALIZADA";}
+            break;
+        case 4:
+             system("cls");
+            if(cli.recuclientes()==true){cout<<"RECUPERACION REALIZADA";}
+            break;
+        case 5:
+             system("cls");
+            if(art.recuarticulos()==true){cout<<"RECUPERACION  REALIZADA";}
+            break;
+        case 6:
+           system("cls");
+            if(vent.recuventas()==true){cout<<"RECUPERACION  REALIZADA";}
+            break;
+        case 7:
+            if (DatosInicio()==1){cout<<"DATOS REESTABLECIDOS";}
+            break;
+        case 0:
+                return;
+            break;
+
+        default:
+            break;
+        }
+        cout <<endl;
+        system("pause");
+        system("cls");
+
+}
+
+
+ }
+
+#endif // SUBMENUCONFIGURACION_H_INCLUDED
+
+#ifndef SUBMENUREPORTES_H_INCLUDED
+#define SUBMENUREPORTES_H_INCLUDED
+
+
+void subMenuREP();
+
+
+void subMenuREP(){
+    int opc;
+    noVentas2021 obj;
+    while(true){
+        system("cls");
+        cout<<"MENU REPORTES"<<endl;
+        cout<<"-----------------------------"<<endl;
+        cout<<"1) INFORMAR VENTAS DE UN DNI A LISTAR"<<endl;
+        cout<<"2) MES CON MENOR VENTAS EN 2021"<<endl;
+        cout<<"3) CLIENTES QUE NO HAYAN REALIZADO COMPRAS EN 2022  "<<endl;
+        cout<<"4) MENOR IMPORTE TOTAL DESDE 1990  "<<endl;
+        cout<<"-----------------------------"<<endl;
+        cout<<"0) VOLVER AL MENU PRINCIPAL "<<endl;
+        cout<<"SELECCIONE UNA DE LAS OPCIONES"<<endl;
+        cin>>opc;
+        system("cls");
+        switch(opc){
+            case 1:
+
+                system("pause");
+                break;
+            case 2:
+            system("pause");
+                break;
+            case 3:
+
+                    system("pause");
+                break;
+            case 4:
+                    system("pause");
+                break;
+            case 0: return;
+                    break;
+                   default: cout<<"OPCION INCORRECTA"<<endl;
+                    break;
+        }
+    }
+}
+
+
+
+#endif // SUBMENUREPORTES_H_INCLUDED
+
+#ifndef SUBMENUVENTAS_H_INCLUDED
+#define SUBMENUVENTAS_H_INCLUDED
+
+void Submenuventas();
+
+
+
+void Submenuventas(){
+Ventas reg;
+int opc;
+    while(true){
+        system("cls");
+        cout<<"MENU VENTAS"<<endl;
+        cout<<"-----------------------------"<<endl;
+        cout<<"1) AGREGAR VENTA "<<endl;
+        cout<<"2) LISTAR VENTA POR ID"<<endl;
+        cout<<"3) LISTAR TODAS LAS VENTAS "<<endl;
+        cout<<"4) MODIFICAR CANTIDAD "<<endl;
+        cout<<"-----------------------------"<<endl;
+        cout<<"0) VOLVER AL MENU PRINCIPAL "<<endl;
+        cout<<"SELECCIONE UNA DE LAS OPCIONES"<<endl;
+        cin>>opc;
+        system("cls");
+        switch(opc){
+            case 1: system("cls");
+                    reg.cargar();
+                    if (reg.grabarEnDisco()==1) cout<< "VENTA REGISTRADA! " <<endl;
+
+                    break;
+            case 2: system("cls");
+                    reg.listarVentaID();
+                    break;
+            case 3: reg.mostrarVentas();
+                    break;
+            case 4: reg.modificarCant();
+                    break;
+            case 0: return ;
+                    break;
+            default: cout<<"OPCION INCORRECTA"<<endl;
+                    break;
+        }
+        cout <<endl;
+        system("pause");
+    }
+
+
+
+
+
+}
+
+#endif // SUBMENUVENTAS_H_INCLUDED
+
+#ifndef CLASEARTICULO_H_INCLUDED
+#define CLASEARTICULO_H_INCLUDED
+class Articulo{
+private:
+
+    char CodigoArticulo[5],Descripcion[30];
+    float PrecioUnitario=0;
+    int Stock;
+    bool Estado;
+    const char *File="articulo.dat";
+
+public:
+    ///SETS///
+    void setCodigoArt(const char *A){strcpy(CodigoArticulo,A);}
+    void setDescripcion(const char *D){strcpy(Descripcion,D);}
+    void setPrecioUnitario(float P){PrecioUnitario=P;}
+    void setStock(int S){Stock=S;}
+    void setEstado(bool E){Estado=E;}
+    ///GETS
+    const char *getCodigoArt(){return CodigoArticulo;}
+    const char *getDescripcion(){return Descripcion;}
+    float getPrecioUnitario(){return PrecioUnitario;}
+    int getStock(){return Stock;}
+    bool getEstado(){return Estado;}
+    ///DISCO///
+    int LeerDeDisco(int);
+    int LeerDeDiscobkp(int);
+    int GrabarEnDisco();
+    int ModificarEnDisco(int);
+    void EliminarDeDisco();
+    bool backuparticulos();
+    bool recuarticulos();
+    int RetornarPosCodigo(const char);
+    bool datoinicio();
+    int leerEnDiscoinicio(int pos);
+
+
+    int Comparar(const char *C){
+    int pos=0;
+    char D[5];
+    strcpy(D,C);
+    while(LeerDeDisco(pos)==1){
+        if(strcmp(D,getCodigoArt())==0 && getEstado()==true){
+            return 1;
+        }
+    pos++;
+    }
+    setCodigoArt(D);
+    return 0;
+    }
+
+
+
+    ///PUNTOS
+
+
+
+    void ModificarPrecio(){
+        int pos=0;
+        float P;
+        char C[5];
+        while(LeerDeDisco(pos)==1){
+                 cout<<"INTRODUCE EL CODIGO DE ARTICULO A LISTAR: ";cin>>C;
+             if(strcmp(getCodigoArt(),C)==0){
+                    if(getEstado()==true){
+                       cout<<"CODIGO : "<<getCodigoArt()<<endl;
+                        cout<<"PRECIO UNITARIO : "<<getPrecioUnitario()<<endl;
+                cout<<"INTRODUCE UN NUEVO PRECIO UNITARIO PARA EL ARTICULO: ";cin>>P;
+                    setPrecioUnitario(P);
+                    if(ModificarEnDisco(pos)==1){cout<<"PRECIO MODIFICADO!"<<endl;}
+                        cout<<endl<<endl;
+                    }else{
+                    cout<<"";
+                    }
+
+                }
+                pos++;
+        }
+
+
+    }
+    void ListadoCompleto(){
+        int pos=0;
+        while(LeerDeDisco(pos)==1){
+            Mostrar();
+            cout<<endl;
+            pos++;
+        }
+
+    }
+    int RetornarPosCodigo(const char *C){
+            int pos=0,A=0;
+        while(LeerDeDisco(pos)==1){
+                if(strcmp(getCodigoArt(),C)==0){
+                        A=getPrecioUnitario();
+                        return A;
+                        cout<<endl<<endl;
+                 }
+            pos++;
+        }
+    }
+
+
+    int ListarPorCodigo(){
+            int pos=0;
+            char C[5];
+        cout<<"INTRODUCE EL CODIGO DE ARTICULO A LISTAR: ";cin>>C;
+        while(LeerDeDisco(pos)==1){
+                if(strcmp(getCodigoArt(),C)==0 ){
+                        if(getEstado()==true){
+                          Mostrar();
+                          return 1;
+                        cout<<endl<<endl;
+                        }else{
+                        cout<<"ESTE ARTICULO ESTA ELIMINADO"<<endl;
+                        }
+
+                }
+
+            pos++;
+        }
+        return -1;
+    }
+    void Cargar(){
+
+
+        cout<<"CODIGO DE ARTICULO: ";cin>>CodigoArticulo;
+        while(Comparar(CodigoArticulo)!=0){
+            system("cls");
+                cout<<"ESTE CODIGO YA ESTA EN USO, INGRESE UNO NUEVO;"<<endl;
+            cout<<"CODIGO DE ARTICULO: ";cin>>CodigoArticulo;
+
+        }
+            system("cls");
+              fflush(stdin);
+            cout<<"CODIGO DE ARTICULO: "<<CodigoArticulo<<endl;
+            cout<<"INGRESE LA DESCRIPCION: ";cin.getline(Descripcion,30);//cargarCadena(Descripcion,29);
+
+              fflush(stdin);
+
+
+        do
+        {
+            cout<<"INGRESE EL PRECIO UNITARIO: ";
+            cin>>PrecioUnitario;
+              if(PrecioUnitario<0){
+                    cout<<"EL PRECIO ES NEGATIVO, NO CORRESPONDE , INGRESAR OTRA VEZ "<<endl;
+
+              }
+
+
+        } while (PrecioUnitario<0);
+                system("cls");
+
+                cout<<"CODIGO DE ARTICULO: "<<CodigoArticulo<<endl;
+                 fflush(stdin);
+                cout<<"DESCRIPCION: "<<Descripcion<<endl;
+                 fflush(stdin);
+                cout<<"PRECIO UNITARIO:  "<<PrecioUnitario<<endl;
+
+        cout<<"INGRESE EL STOCK: ";cin>>Stock;///LO MISMO QUE PRECIO UNITARIO
+        Estado=true;
+
+        }
+
+    void Mostrar(){
+        if(Estado==true){
+        cout<<" CODIGO DE ARTICULO: "<<CodigoArticulo<<endl;
+        cout<<" DESCRIPCION: "<<Descripcion<<endl;
+        cout<<" PRECIO UNITARIO: "<<PrecioUnitario<<endl;
+
+        int SN=cantventas(CodigoArticulo);
+
+        cout<<" STOCK: "<<Stock-SN<<endl;
+
+        }
+
+
+    }
+
+
+};
+void Articulo::EliminarDeDisco(){
+       int pos=0;
+            char C[5];
+        cout<<"INTRODUCE EL CODIGO DE ARTICULO A ELIMINAR: ";cin>>C;
+        while(LeerDeDisco(pos)==1){
+                if(strcmp(getCodigoArt(),C)==0){
+                        cout<<"EL ARTICULO CONTIENE LOS SIGUIENTES DATOS: "<<endl;
+                        Mostrar();
+                        cout<<endl<<endl;
+                        setEstado(false);
+                        if(ModificarEnDisco(pos)==1){cout<<"REGISTRO ELIMINADO! ";}
+                }
+            pos++;
+        }
+
+
+}
+int Articulo::LeerDeDisco(int pos){
+    FILE *A;
+        A=fopen("articulo.dat","rb");
+            if(A==NULL){return-1;}
+    fseek(A,sizeof(Articulo)*pos,0);
+    int leyo=fread(this,sizeof(Articulo),1,A);
+    fclose(A);
+    return leyo;
+
+
+}
+int Articulo::LeerDeDiscobkp(int pos){
+    FILE *A;
+        A=fopen("backup/articulo.bkp","rb");
+            if(A==NULL){cout<<"ERROR DE LECTURA!";return-1;}
+    fseek(A,sizeof(Articulo)*pos,0);
+    int leyo=fread(this,sizeof(Articulo),1,A);
+    fclose(A);
+    return leyo;
+
+
+}
+int Articulo::GrabarEnDisco(){
+    FILE *A;
+     A=fopen("articulo.dat","ab");
+        if(A==NULL){cout<<"ERROR DE ESCRITURA!";return -1;}
+    int leyo=fwrite(this,sizeof(Articulo),1,A);
+    fclose(A);
+    return leyo;
+
+}
+int Articulo::ModificarEnDisco(int pos){
+     FILE *A;
+     A=fopen("articulo.dat","rb+");
+        if(A==NULL){cout<<"ERROR AL MODIFICAR!";return -1;}
+    fseek(A,sizeof(Articulo)*pos,0);
+    int leyo=fwrite(this,sizeof(Articulo),1,A);
+    fclose(A);
+    return leyo;
+
+}
+
+
+
+
+
+
+///BACKUP
+bool Articulo::backuparticulos(){
+
+int pos=0;
+FILE *b;
+    b=fopen("backup/articulo.bkp","wb");
+    if(b==NULL){return false;}
+    while(LeerDeDisco(pos)==1){
+        fwrite(this,sizeof(Articulo),1,b);
+        pos++;
+    }
+    fclose(b);
+    if(pos==0){return false;}
+    return true;
+}
+ bool Articulo::recuarticulos(){
+int pos=0;
+FILE *br;
+    br=fopen("articulo.dat","wb");
+    if(br==NULL){return false;}
+    while(LeerDeDiscobkp(pos)==1){
+        fwrite(this,sizeof(Articulo),1,br);
+        pos++;
+    }
+    fclose(br);
+    if(pos==0){return false;}
+    return true;
+
+ }
+ ///DATOS INICIALES
+ int Articulo::leerEnDiscoinicio(int pos)
+{
+    FILE *b;
+    b=fopen("datosiniciales/articulo.dat","rb");
+    if (b==NULL) {return -1;}
+    fseek(b,sizeof(Articulo)*pos,0);
+    int leyo=fread(this,sizeof(Articulo),1,b);
+    fclose(b);
+    return leyo;
+}
+
+bool Articulo::datoinicio(){
+    FILE *bn;
+    int pos=0;
+    bn=fopen("articulo.dat","wb");
+    if(bn==NULL){return false;}
+        while(leerEnDiscoinicio(pos)==1){
+                fwrite(this,sizeof(Articulo),1,bn);
+        pos++;
+        }
+        if(pos==0){return false;}
+        fclose(bn);
+        return true;
+}
+
+
+#endif // CLASEARTICULO_H_INCLUDED
+
+#ifndef CLASECLIENTES_H_INCLUDED
+#define CLASECLIENTES_H_INCLUDED
+#include"funcGlobalCli.h"
+
+class Cliente
+{
+  private:
+      int DNI;
+      Fecha fechaNacimiento;
+      char nombre[20], apellido[20], email [30];
+      char telefono[25];
+      bool estado;
+      bool activo;
+
+  public:
+      Cliente(int d=0, const char *n="vacio", const char *a="vacio",
+              const char *e="vacio",const char *t="vacio")
+              {
+                  DNI=d;
+                  strcpy(nombre,n);
+                  strcpy(apellido,a);
+                  strcpy(email,e);
+                  strcpy(telefono,t);
+              }
+    ///validaciones
+    int comparar(int D){
+        int pos=0;
+        while(leerEnDisco(pos)==1){
+            if(getDNI()==D && getEstado()==true){
+                return 1;
+
+            }
+            pos++;
+        }
+        setDNI(D);
+    return 0;
+    }
+
+      ///sets()
+      void setDNI (int d){DNI=d;}
+      void setfechaNacimiento(Fecha f){fechaNacimiento=f;}
+      void setNombre (const char *n){strcpy(nombre,n);}
+      void setApellido (const char *a){strcpy(apellido,a);}
+      void setEmail (const char *e){strcpy(email,e);}
+      void setTelefono (const char *t){strcpy(telefono,t);}
+      void setEstado(bool e){estado=e;}
+      void setActivo(bool act) {activo=act;}
+      ///gets()
+      int getDNI (){return DNI;}
+      Fecha getfechaNacimiento(){return fechaNacimiento;}
+      const char *getNombre (){return nombre;}
+      const char *getApellido (){return apellido;}
+      const char *getEmail (){return email;}
+      const char *getTelefono (){return telefono;}
+      bool getEstado(){return estado;}
+      ///disco
+      int grabarEnDisco();
+      int leerEnDisco(int);
+      int leerEnDiscobkp(int);
+      int ModificarEnDisco(int);
+      bool backupclientes();
+      bool recuclientes();
+      bool datoinicio();
+      int leerEnDiscoinicio(int pos);
+      ///puntos
+
+
+
+      int modificarFecha()
+{
+
+
+        int pos=0, DNI,d,m,a;
+        cout<<"INTRODUZCA EL DNI DE LA FECHA A MODIFICAR: ";cin>>DNI;
+        while(leerEnDisco(pos)==1){
+
+             if(getDNI()==DNI && getEstado()==true){
+                        mostrar();
+                cout<<"INTRODUCE LA NUEVA FECHA DE NACIMIENTO: ";
+                cout<<"Ingrese el dia"<<endl;
+                cin>>d;
+                fechaNacimiento.setDia(d);
+                cout<<"Ingrese el mes"<<endl;
+                cin>>m;
+                fechaNacimiento.setMes(m);
+                cout<<"Ingrese el anio"<<endl;
+                cin>>a;
+                fechaNacimiento.setAnio(a);
+                    if(ModificarEnDisco(pos)==1){cout<<"NACIMIENTO MODIFICADO!"<<endl;}
+                        cout<<endl<<endl;
+                }
+                pos++;
+        }
+}
+
+
+    bool cargarCliente()
+{
+    FILE *p;
+    bool escribio;
+    Cliente reg;
+    p=fopen("cliente.dat","ab");
+    if (p==NULL) return false;
+    cout <<"Ingrese el DNI: ";
+    cin >> DNI;
+    int pos=buscarClienteDNI(DNI);
+    if (pos>=0)
+    {
+      cout<<"El DNI ya existe en el archivo de clientes"<<endl;
+      return false;
+    }
+    else
+    {
+      cargar(DNI);
+      escribio=fwrite(this,sizeof reg,1,p);
+      fclose(p);
+      return escribio;
+    }
+}
+
+
+void mostrarClientes()
+{
+    FILE *p;
+    p=fopen("cliente.dat","rb");
+    if (p==NULL) return;
+    while(fread(this,sizeof (Cliente),1,p)==1)
+    {
+        mostrar();
+    }
+    fclose(p);
+}
+
+int buscarClienteDNI(int DNI)
+{
+    int i=0;
+    FILE *p;
+    p=fopen("cliente.dat","rb");
+    if (p==NULL) return -2;
+    while(fread(this,sizeof (Cliente),1,p)==1)
+    {
+        if(getDNI()==DNI && getEstado()==true)
+        {
+            fclose(p);
+            return 0;
+        }
+        i++;
+    }
+    fclose(p);
+    return -1;
+}
+int retornarClienteDNIpos(int DNI)
+{
+    int i=0;
+    FILE *p;
+    p=fopen("cliente.dat","rb");
+    if (p==NULL) return -2;
+    while(fread(this,sizeof (Cliente),1,p)==1)
+    {
+        if(getDNI()==DNI && getEstado()==true)
+        {
+            fclose(p);
+            mostrar();
+            return i;
+
+        }
+        i++;
+    }
+    fclose(p);
+    return -1;
+}
+
+int listarClientesDNI(){
+    int pos;
+    cout<<"INGRESE EL DNI DEL CLIENTE: ";
+    cin>>DNI;
+    pos=retornarClienteDNIpos(DNI);
+
+    if(pos==-1) cout << "Este registro ha sido eliminado anteriormente"<<endl; return -1;
+
+    return 1;
+}
+
+bool BajaCliente()
+{
+
+  int pos;
+
+ cout<<"Ingrese el DNI: ";
+ cin>>DNI;
+ pos=retornarClienteDNIpos(DNI);
+ if(pos==-1)
+ {
+     cout<<"No existe el cliente con ese DNI"<<endl;
+     system("pause");
+     return false;
+ }
+while(leerEnDisco(pos)==1)
+{
+
+ setEstado(false);
+ if (ModificarEnDisco(pos)==true)
+ {
+     cout<<"Registro elimindado"<<endl;
+     return true;
+ }
+ else
+ {
+     return false;
+ }
+}
+
+}
+
+    void cargar(int d=0)
+{
+    estado=true;
+
+    if(d!=0)
+    {
+        DNI=d;
+    }
+    else
+    {
+    cout<<"DNI: ";
+    cin>> DNI;
+
+    while(comparar(DNI)!=0){
+            system("cls");
+        cout<<"ESTE DNI YA EXISTE"<<endl;
+        cout<<"DNI: ";
+        cin>> DNI;
+    }
+    system("cls");
+    cout<<"DNI: "<<DNI<<endl;
+    fflush(stdin);
+    cout<<"NOMBRE: ";
+    cin.getline(nombre,20);
+    fflush(stdin);
+    //cargarCadena(nombre,19);
+    cout<<"APELLIDO: ";
+    //cargarCadena(apellido,19);
+    cin.getline(apellido,20);
+    fflush(stdin);
+    cout<<"EMAIL: ";
+    //cargarCadena(email,29);
+    cin.getline(email,30);
+    fflush(stdin);
+    cout<<"TELEFONO: ";
+    //cargarCadena(telefono,24);
+     cin.getline(telefono,25);
+     fflush(stdin);
+
+    fechaNacimiento.Cargar();
+}
+}
+void mostrar()
+{
+    if(estado==true)
+    {
+
+    cout<<"DNI: ";
+    cout<< DNI<<endl;
+    cout<<"NOMBRE: ";
+    cout<<nombre<<endl;
+    cout<<"APELLIDO: ";
+    cout<<apellido<<endl;
+    cout<<"TELEFONO: ";
+    cout<<telefono<<endl;
+    cout<<"EMAIL: ";
+    cout<<email<<endl;
+    fechaNacimiento.Mostrar();
+    cout<<endl;
+    }
+}
+
+
+
+};
+
+int Cliente::grabarEnDisco()
+{
+    FILE *p;
+    p=fopen("cliente.dat","ab");
+    if (p==NULL) return -1;
+    int escribio=fwrite(this,sizeof(Cliente),1,p);
+    fclose(p);
+    return escribio;
+}
+
+int Cliente::leerEnDisco(int pos)
+{
+    FILE *p;
+    p=fopen("cliente.dat","rb");
+    if (p==NULL) return -1;
+    fseek(p,sizeof(Cliente)*pos,0);
+    int leyo=fread(this,sizeof(Cliente),1,p);
+    fclose(p);
+    return leyo;
+}
+int Cliente::ModificarEnDisco(int pos)
+{
+
+    FILE *p;
+    p=fopen("cliente.dat","rb+");
+    if (p==NULL) return -1;
+    fseek(p,sizeof(Cliente)*pos,0);
+    int escribio=fwrite(this,sizeof(Cliente),1,p);
+    fclose(p);
+    return escribio;
+}
+///BACKUP/RECU
+int Cliente::leerEnDiscobkp(int pos)
+{
+    FILE *b;
+    b=fopen("backup/cliente.bkp","rb");
+    if (b==NULL) {return -1;}
+    fseek(b,sizeof(Cliente)*pos,0);
+    int leyo=fread(this,sizeof(Cliente),1,b);
+    fclose(b);
+    return leyo;
+}
+
+
+
+
+bool Cliente::backupclientes(){
+    int pos=0;
+FILE *b;
+    b=fopen("backup/cliente.bkp","wb");
+    if(b==NULL){return false;}
+        while(leerEnDisco(pos)==1){
+            fwrite(this,sizeof(Cliente),1,b);
+            pos++;
+        }
+        if(pos==0){return false;}
+        fclose(b);
+        return true;
+
+}
+bool Cliente::recuclientes(){
+    FILE *bn;
+    int pos=0;
+    bn=fopen("cliente.dat","wb");
+    if(bn==NULL){return false;}
+        while(leerEnDiscobkp(pos)==1){
+                fwrite(this,sizeof(Cliente),1,bn);
+        pos++;
+        }
+        if(pos==0){return false;}
+        fclose(bn);
+        return true;
+}
+///DATOS INICIO
+int Cliente::leerEnDiscoinicio(int pos)
+{
+    FILE *b;
+    b=fopen("datosiniciales/cliente.dat","rb");
+    if (b==NULL) {return -1;}
+    fseek(b,sizeof(Cliente)*pos,0);
+    int leyo=fread(this,sizeof(Cliente),1,b);
+    fclose(b);
+    return leyo;
+}
+
+bool Cliente::datoinicio(){
+    FILE *bn;
+    int pos=0;
+    bn=fopen("cliente.dat","wb");
+    if(bn==NULL){return false;}
+        while(leerEnDiscoinicio(pos)==1){
+                fwrite(this,sizeof(Cliente),1,bn);
+        pos++;
+        }
+        if(pos==0){return false;}
+        fclose(bn);
+        return true;
+}
+
+
+
+#endif // CLASECLIENTES_H_INCLUDED
+
+#ifndef CLASEFECHAVENTAS_H_INCLUDED
+#define CLASEFECHAVENTAS_H_INCLUDED
+
+class FechaVentas{
+private:///es accesible dentro de la clase
+    int dia, mes, anio;///propiedades
+public:///es accesible dentro y fuera de la clase
+    fecha(int d=0, int m=0, int a=0){
+        this->dia=d;
+        this->mes=m;
+        this->anio=a;
+    }
+    ///gets() funciones de la clase que permiten hacer conocer al exterior de la clase el valor de cada prop.
+    int getDia(){return dia;}
+    int getMes(){return mes;}
+    int getAnio(){return anio;}
+    ///sets() funciones que permiten modificar los valores de cada una de las propiedades
+    void setDia(int d){if(d>=1 && d<=31) dia=d;}
+    void setMes(int m){if (m>=1 && m<=12) mes=m;}
+    void setAnio(int a){if (a>=1990 && a<=2050) anio=a;}
+
+
+    void Cargar();
+    void Mostrar();
+    int modificarEnDiscoFecha(int);
+    void Mostrar_this(){
+        cout<<this<<endl;
+    }
+
+};
+
+void FechaVentas::Cargar(){
+        int d, m, a;
+
+        cout<<"INGRESE EL DIA: ";
+        cin>>d;
+        cout<<"INGRESE EL MES: ";
+        cin>>m;
+        cout<<"INGRESE EL ANIO: ";
+        cin>>a;
+        setDia(d);
+        setMes(m);
+        setAnio(a);
+
+    }
+
+void FechaVentas::Mostrar(){
+        cout<<dia<<"/"<<mes<<"/"<<anio<<endl;
+        cout<<endl<<endl;
+
+    }
+
+
+#endif // CLASEFECHAVENTAS_H_INCLUDED
+
+#ifndef CLASEVENTAS_H_INCLUDED
+#define CLASEVENTAS_H_INCLUDED
+
+class Ventas
+{
+  private:
+      int i;
+      int DNI, ID,cantUni;
+      FechaVentas fecha;
+      Articulo obj;
+      Cliente reg;
+      char articulo[5];
+      float importe;
+      bool estado;
+
+  public:
+      Ventas(int d=0, int i=0, int u=0,
+              const char *a="vacio",int imp=0)
+              {
+                  DNI=d;
+                  ID=i;
+                  cantUni=u;
+                  strcpy(articulo,a);
+                  importe=imp;
+              }
+      ///sets()
+      void setDNI (int d){DNI=d;}
+      void setcantuni (int u){cantUni=u;}
+      void setfecha(FechaVentas fecha2){fecha=fecha2;}
+            void setID (int i){ID=i;}
+      void setarticulo (const char *a){strcpy(articulo,a);}
+      void setimporte (float imp){importe=imp;}
+      void setEstado(bool e){estado=e;}
+
+      ///gets()
+      int getDNI (){return DNI;}
+      FechaVentas getfecha(){return fecha;}
+      int getID (){return ID;}
+      int getcantuni (){return cantUni;}
+      const char *getarticulo (){return articulo;}
+      float getimporte () {return importe;}
+      bool getEstado(){return estado;}
+      ///disco
+      int grabarEnDisco();
+      int leerEnDisco(int);
+      int ModificarEnDisco(int);
+      bool datoinicio();
+      int leerEnDiscoinicio(int pos);
+      ///backup y recuperacion
+      int leerEnDiscobkp(int pos);
+      bool backupventas();
+      bool recuventas();
+
+      ///puntos
+
+
+      void cargar(int d=0)
+{
+    estado=true;
+    cout<<"ID: ";///no se repita
+    cin>> ID;
+    while(BuscarVentaID(ID)==0){
+
+
+
+
+         system("pause");
+        system("cls");
+        cout<<"ESTE ID YA EXISTE"<<endl;
+        cout<<"ID: ";
+        cin>> ID;
+
+    }
+
+    cout<<"CODIGO DE ARTICULO: ";///exista
+    cin>>articulo;
+    while(obj.Comparar(articulo)!=1){
+            cout<<"ESTE CODIGO NO EXISTE"<<endl;
+            cout<<"CODIGO DE ARTICULO: ";
+            cin>>articulo;
+
+
+    }
+    system("cls");
+    cout<<"ID: "<<ID<<endl;
+    cout<<"CODIGO DE ARTICULO: "<<articulo;
+
+    cout<<"\t STOCK: "<<obj.getStock()-cantventas(articulo)<<endl;
+    cout<<"DNI: ";
+    cin >> DNI;
+    while(reg.comparar(DNI)!=1){
+        cout<<"ESTE DNI NO EXISTE "<<endl;
+
+         system("pause");
+
+         cout<<"DNI: ";
+        cin >> DNI;
+    }
+    system("cls");
+    cout<<"ID: "<<ID<<endl;
+    cout<<"CODIGO DE ARTICULO: "<<articulo;
+    cout<<"\t STOCK: "<<obj.getStock()-cantventas(articulo)<<endl;
+    cout<<"DNI: "<<DNI<<endl;
+
+    cout<<"CANTIDAD DE UNIDADES: ";
+    cin >> cantUni;
+   while(cantUni<0){
+        cout<<"LA CANTIDAD INGRESADA DEBE SER POSITIVA"<<endl;
+        cout<<"CANTIDAD DE UNIDADES: ";
+        cin >> cantUni;
+
+
+
+   }
+   system("cls");
+    cout<<"ID: "<<ID<<endl;
+    cout<<"CODIGO DE ARTICULO: "<<articulo;
+    cout<<"\t STOCK: "<<obj.getStock()-cantventas(articulo)<<endl;
+    cout<<"DNI: "<<DNI<<endl;
+    cout<<"CANTIDAD DE UNIDADES: "<<cantUni<<endl;
+
+    while((obj.getStock()-cantventas(articulo))-cantUni<0){
+        cout<<"EL ARTICULO NO CUENTA CON EL STOCK SUFICIENTE!";
+        system("pause");
+        cout<<"CANTIDAD DE UNIDADES: ";
+        cin >> cantUni;
+    }
+    system("cls");
+    cout<<"ID: "<<ID<<endl;
+    cout<<"CODIGO DE ARTICULO: "<<articulo;
+    cout<<"\t STOCK: "<<obj.getStock()-cantventas(articulo)<<endl;
+    cout<<"DNI: "<<DNI<<endl;
+    cout<<"CANTIDAD DE UNIDADES: "<<cantUni<<endl;
+    fecha.Cargar();
+
+    int P=obj.RetornarPosCodigo(articulo);
+    importe=P*cantUni;
+    cout<<"IMPORTE: "<<importe<<"$"<<endl;
+
+
+   // cout<<"IMPORTE: ";
+   //cin >> importe;
+
+}
+void mostrar()
+{
+    if(estado==true)
+    {
+
+    cout<<"ID: ";
+    cout<< ID<<endl;
+    cout<<"CODIGO DE ARTICULO: ";
+    cout<<articulo<<endl;
+    cout<<"DNI: ";
+    cout<<DNI<<endl;
+    cout<<"CANTIDAD DE UNIDADES: ";
+    cout<<cantUni<<endl;
+    cout<<"IMPORTE: ";
+    cout<<importe<<endl;
+    fecha.Mostrar();
+    cout<<endl;
+    }
+}
+
+int BuscarVentaID(int ID)
+{
+    int i=0;
+    FILE *p;
+    p=fopen("ventas.dat","rb");
+    if (p==NULL) return -2;
+    while(fread(this,sizeof (Ventas),1,p)==1)
+    {
+        if(getID()==ID)
+        {
+            fclose(p);
+            return 0;
+        }
+        i++;
+    }
+    fclose(p);
+    setID(ID);
+    return -1;
+}
+
+int listarVentaID(){
+    int pos;
+    cout<<"INGRESE EL ID DE LA VENTA: ";
+    cin>>ID;
+    pos=BuscarVentaID(ID);
+    if(pos==-1) {cout <<"NO EXISTE ESE ID DE VENTA! "<<endl;}
+    else {
+    leerEnDisco(pos);
+    mostrar();
+    }
+    return 1;
+}
+
+void mostrarVentas()
+{
+    FILE *p;
+    p=fopen("ventas.dat","rb");
+    if (p==NULL) return;
+    while(fread(this,sizeof (Ventas),1,p)==1)
+    {
+        mostrar();
+    }
+    fclose(p);
+}
+
+int modificarCant()
+{
+
+
+        int pos=0, ID,u;
+        cout<<"INTRODUZCA EL ID DE LA CANTIDAD A MODIFICAR: ";cin>>ID;
+        pos=BuscarVentaID(ID);
+        if (pos==-1){
+            cout<<"NO EXISTE EL ID INGRESADO"<<endl;
+        }
+        else {
+        while(leerEnDisco(pos)==1){
+                if(getID()==ID){
+                        mostrar();
+                cout<<"INTRODUCE LA NUEVA CANTIDAD DE UNIDADES: ";
+                cin >> u;
+                setcantuni(u);
+                    if(ModificarEnDisco(pos)==1){cout<<"CANTIDAD MODIFICADA!"<<endl;}
+                        cout<<endl<<endl;
+                }
+
+                pos++;
+        }
+    }
+}
+};
+
+int Ventas::grabarEnDisco()
+{
+    FILE *p;
+    p=fopen("ventas.dat","ab");
+    if (p==NULL) return -1;
+    int escribio=fwrite(this,sizeof(Ventas),1,p);
+    fclose(p);
+    return escribio;
+}
+
+int Ventas::leerEnDisco(int pos)
+{
+    FILE *p;
+    p=fopen("ventas.dat","rb");
+    if (p==NULL) return -1;
+    fseek(p,sizeof(Ventas)*pos,0);
+    int leyo=fread(this,sizeof(Ventas),1,p);
+    fclose(p);
+    return leyo;
+}
+int Ventas::ModificarEnDisco(int pos)
+{
+
+    FILE *p;
+    p=fopen("ventas.dat","rb+");
+    if (p==NULL) return -1;
+    fseek(p,sizeof(Ventas)*pos,0);
+    int escribio=fwrite(this,sizeof(Ventas),1,p);
+    fclose(p);
+    return escribio;
+}
+
+/// backup Ventas
+
+int Ventas::leerEnDiscobkp(int pos)
+{
+    FILE *b;
+    b=fopen("backup/ventas.bkp","rb");
+    if (b==NULL) {return -1;}
+    fseek(b,sizeof(Ventas)*pos,0);
+    int leyo=fread(this,sizeof(Ventas),1,b);
+    fclose(b);
+    return leyo;
+}
+
+
+
+
+bool Ventas::backupventas()
+{
+    int pos=0;
+    FILE *b;
+    b=fopen("backup/ventas.bkp","wb");
+    if(b==NULL){return false;}
+        while(leerEnDisco(pos)==1){
+            fwrite(this,sizeof(Ventas),1,b);
+            pos++;
+        }
+        if(pos==0){return false;}
+        fclose(b);
+        return true;
+
+}
+bool Ventas::recuventas()
+{
+    FILE *bv;
+    int pos=0;
+    bv=fopen("ventas.dat","wb");
+    if(bv==NULL){return false;}
+        while(leerEnDiscobkp(pos)==1){
+                fwrite(this,sizeof(Ventas),1,bv);
+        pos++;
+        }
+        if(pos==0){return false;}
+        fclose(bv);
+        return true;
+}
+///DATOS INICIALES
+int Ventas::leerEnDiscoinicio(int pos)
+{
+    FILE *b;
+    b=fopen("datosiniciales/ventas.dat","rb");
+    if (b==NULL) {return -1;}
+    fseek(b,sizeof(Ventas)*pos,0);
+    int leyo=fread(this,sizeof(Ventas),1,b);
+    fclose(b);
+    return leyo;
+}
+
+bool Ventas::datoinicio(){
+    FILE *bn;
+    int pos=0;
+    bn=fopen("ventas.dat","wb");
+    if(bn==NULL){return false;}
+        while(leerEnDiscobkp(pos)==1){
+                fwrite(this,sizeof(Ventas),1,bn);
+        pos++;
+        }
+        if(pos==0){return false;}
+        fclose(bn);
+        return true;
+}
+
+#endif // CLASEVENTAS_H_INCLUDED
+
+#ifndef FECHA_H_INCLUDED
+#define FECHA_H_INCLUDED
+
+class Fecha{
+private:///es accesible dentro de la clase
+    int dia, mes, anio;///propiedades
+public:///es accesible dentro y fuera de la clase
+    Fecha(int d=0, int m=0, int a=0){
+        this->dia=d;
+        this->mes=m;
+        this->anio=a;
+    }
+    ///gets() funciones de la clase que permiten hacer conocer al exterior de la clase el valor de cada prop.
+    int getDia(){return dia;}
+    int getMes(){return mes;}
+    int getAnio(){return anio;}
+    ///sets() funciones que permiten modificar los valores de cada una de las propiedades
+    void setDia(int d){if(d>=1 && d<=31) dia=d;}
+    void setMes(int m){if (m>=1 && m<=12) mes=m;}
+    void setAnio(int a){if (a>=1930 && a<=2010) anio=a;}
+
+
+    void Cargar();
+    void Mostrar();
+    int modificarEnDiscoFecha(int);
+    void Mostrar_this(){
+        cout<<this<<endl;
+    }
+
+};
+
+void Fecha::Cargar(){
+        int d, m, a;
+
+        cout<<"INGRESE EL DIA: ";
+        cin>>d;
+        cout<<"INGRESE EL MES: ";
+        cin>>m;
+        cout<<"INGRESE EL ANIO: ";
+        cin>>a;
+        setDia(d);
+        setMes(m);
+        setAnio(a);
+
+    }
+
+void Fecha::Mostrar(){
+        cout<<dia<<"/"<<mes<<"/"<<anio<<endl;
+        cout<<endl<<endl;
+
+    }
+
+#endif // FECHA_H_INCLUDED
+
+#ifndef FUNCGLOBALCLI_H_INCLUDED
+#define FUNCGLOBALCLI_H_INCLUDED
+
+///PROTOTIPOS
+
+void cargarCadena(char *pal, int tam);
+///FIN PROTOTIPOS
+
+void cargarCadena(char *pal, int tam)
+{
+    int i;
+    fflush(stdin);
+    for(i=0;i<tam;i++)
+    {
+        pal[i]=cin.get();
+        if (pal[i]=='\n')break;
+    }
+    pal[i]=='\0';
+    fflush(stdin);
+}
+
+
+
+
+#endif // FUNCGLOBALCLI_H_INCLUDED
+
+#ifndef FUNCIONESCLASES_H_INCLUDED
+#define FUNCIONESCLASES_H_INCLUDED
+int cantventas(char *C){
+Ventas reg;
+char D[5];
+
+int pos=0;
+int cant=0;
+while(reg.leerEnDisco(pos)==1){
+    if(strcmp(C,reg.getarticulo())==0 && reg.getEstado()==true){
+      cant+=reg.getcantuni();
+    }
+
+    pos++;
+}
+
+return cant;
+
+}
+
+
+int DatosInicio(){
+Cliente obj;
+Articulo reg;
+Ventas lis;
+if(obj.datoinicio()==true && reg.datoinicio()==true && lis.datoinicio()==true){
+    return 1;
+}
+    return -1;
+}
+
+
+
+#endif // FUNCIONESCLASES_H_INCLUDED
+
+#include <iostream>
+#include <cstring>
+#include <cstdio>
+#include <string.h>
+using namespace std;
+#include "ProtoFuncionesClases.h"
+#include "Fecha.h"
+#include "ClaseClientes.h"
+#include "ClaseArticulo.h"
+#include "funcGlobalCli.h"
+#include "ClaseFechaVentas.h"
+#include "ClaseVentas.h"
+#include "Reportes.h"
+#include "Submenucliente.h"
+#include "Submenuarticulo.h"
+#include "Submenuventas.h"
+#include "Submenureportes.h"
+#include "Submenuconfiguracion.h"
+#include "FuncionesClases.h"
+
+
+
+
+
+
+
+int main(){
+    int opc;
+    while(true){
+        system("cls");
+        cout<<"MENU PRINCIPAL "<<endl;
+        cout<<"-----------------------------"<<endl;
+        cout<<"1) MENU CLIENTES "<<endl;
+        cout<<"2) MENU ARTICULOS "<<endl;
+        cout<<"3) MENU VENTAS "<<endl;
+        cout<<"4) REPORTES "<<endl;
+        cout<<"5) CONFIGURACION "<<endl;
+        cout<<"-----------------------------"<<endl;
+        cout<<"0) FIN DEL PROGRAMA "<<endl;
+        cout<<"SELECCIONE UNA DE LAS OPCIONES : ";
+        cin>>opc;
+        system("cls");
+        switch(opc){
+            case 1: subMenuCli();
+                    break;
+            case 2:
+                    subMenuArt();
+                    break;
+            case 3: Submenuventas();
+                    break;
+            case 4: subMenuREP();
+
+                    break;
+            case 5:
+                    SubmenuConfiguracion();
+                    break;
+            case 0: return 0;
+                    break;
+            default: cout<<"OPCION INCORRECTA"<<endl;
+                    break;
+        }
+        cout <<endl;
+        system("pause");
+    }
+
+    return 0;
+}
+
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="PRIMER PARCIAL" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/PRIMER PARCIAL" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/PRIMER PARCIAL" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="ClaseArticulo.h" />
+		<Unit filename="ClaseClientes.h" />
+		<Unit filename="ClaseFechaVentas.h" />
+		<Unit filename="ClaseVentas.h" />
+		<Unit filename="D:/tp parcial 2/peliculas.h" />
+		<Unit filename="Fecha.h" />
+		<Unit filename="FuncionesClases.h" />
+		<Unit filename="ProtoFuncionesClases.h" />
+		<Unit filename="Reportes.h" />
+		<Unit filename="Submenuarticulo.h" />
+		<Unit filename="Submenucliente.h" />
+		<Unit filename="Submenuconfiguracion.h" />
+		<Unit filename="Submenureportes.h" />
+		<Unit filename="Submenuventas.h" />
+		<Unit filename="funcGlobalCli.h" />
+		<Unit filename="main.cpp" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
+
+# depslib dependency file v1.0
+1652134763 source:c:\users\axel\documents\github\tp-parcial\primer parcial\main.cpp
+	<iostream>
+	<cstring>
+	"Clases.h"
+	"Submenucliente.h"
+	"Submenuarticulo.h"
+
+1652045044 c:\users\axel\documents\github\tp-parcial\primer parcial\submenucliente.h
+
+1652129768 source:c:\users\jason\documents\github\tp-parcial\primer parcial\main.cpp
+	<iostream>
+	<cstring>
+	"Clases.h"
+	"Submenucliente.h"
+	"Submenuarticulo.h"
+
+1652043299 c:\users\jason\documents\github\tp-parcial\primer parcial\submenucliente.h
+
+1652130416 c:\users\jason\documents\github\tp-parcial\primer parcial\submenuarticulo.h
+
+1652130416 c:\users\jason\documents\github\tp-parcial\primer parcial\clases.h
+
+1652135944 c:\users\axel\documents\github\tp-parcial\primer parcial\clases.h
+
+1652134763 c:\users\axel\documents\github\tp-parcial\primer parcial\submenuarticulo.h
+
+1652294977 source:c:\users\nahuel\downloads\tp-parcial-main\primer parcial\main.cpp
+	<iostream>
+	<cstring>
+	"Fecha.h"
+	"ClaseClientes.h"
+	"funcGlobalCli.h"
+	"Clases.h"
+	"Submenucliente.h"
+	"Submenuarticulo.h"
+	"Submenuventas.h"
+
+1652137413 c:\users\nahuel\downloads\tp-parcial-main\primer parcial\clases.h
+
+1652295743 c:\users\nahuel\downloads\tp-parcial-main\primer parcial\submenucliente.h
+
+1652213709 c:\users\nahuel\downloads\tp-parcial-main\primer parcial\submenuarticulo.h
+
+1652137413 c:\users\nahuel\downloads\tp-parcial-main\primer parcial\submenuventas.h
+
+1652295694 c:\users\nahuel\downloads\tp-parcial-main\primer parcial\claseclientes.h
+	"funcGlobalCli.h"
+
+1652212117 c:\users\nahuel\downloads\tp-parcial-main\primer parcial\fecha.h
+
+1652295487 c:\users\nahuel\downloads\tp-parcial-main\primer parcial\funcglobalcli.h
+
+1652298614 source:c:\users\axel\documents\github\tp-parcial\tp-parcialversion1.1\primer parcial\main.cpp
+	<iostream>
+	<cstring>
+	"Fecha.h"
+	"ClaseClientes.h"
+	"funcGlobalCli.h"
+	"Clases.h"
+	"ClaseVentas.h"
+	"Submenucliente.h"
+	"Submenuarticulo.h"
+	"Submenuventas.h"
+
+1652297547 c:\users\axel\documents\github\tp-parcial\tp-parcialversion1.1\primer parcial\fecha.h
+
+1652297547 c:\users\axel\documents\github\tp-parcial\tp-parcialversion1.1\primer parcial\claseclientes.h
+	"funcGlobalCli.h"
+
+1652297547 c:\users\axel\documents\github\tp-parcial\tp-parcialversion1.1\primer parcial\funcglobalcli.h
+
+1652297547 c:\users\axel\documents\github\tp-parcial\tp-parcialversion1.1\primer parcial\clases.h
+
+1652297547 c:\users\axel\documents\github\tp-parcial\tp-parcialversion1.1\primer parcial\submenucliente.h
+
+1652297547 c:\users\axel\documents\github\tp-parcial\tp-parcialversion1.1\primer parcial\submenuarticulo.h
+
+1652301506 c:\users\axel\documents\github\tp-parcial\tp-parcialversion1.1\primer parcial\submenuventas.h
+
+1652301849 c:\users\axel\documents\github\tp-parcial\tp-parcialversion1.1\primer parcial\claseventas.h
+
+1652460261 source:c:\users\jason\documents\github\tp-parcial\tp-parcialversion1.1\primer parcial\main.cpp
+	<iostream>
+	<cstring>
+	"Fecha.h"
+	"ClaseClientes.h"
+	"Clases.h"
+	"funcGlobalCli.h"
+	"ClaseVentas.h"
+	"Submenucliente.h"
+	"Submenuarticulo.h"
+	"Submenuventas.h"
+	"Submenureportes.h"
+	"Submenuconfiguracion.h"
+
+1652449771 c:\users\jason\documents\github\tp-parcial\tp-parcialversion1.1\primer parcial\fecha.h
+
+1652464771 c:\users\jason\documents\github\tp-parcial\tp-parcialversion1.1\primer parcial\claseclientes.h
+	"funcGlobalCli.h"
+
+1652460537 c:\users\jason\documents\github\tp-parcial\tp-parcialversion1.1\primer parcial\funcglobalcli.h
+
+1652462828 c:\users\jason\documents\github\tp-parcial\tp-parcialversion1.1\primer parcial\clases.h
+
+1652304030 c:\users\jason\documents\github\tp-parcial\tp-parcialversion1.1\primer parcial\claseventas.h
+
+1652304030 c:\users\jason\documents\github\tp-parcial\tp-parcialversion1.1\primer parcial\submenucliente.h
+
+1652304030 c:\users\jason\documents\github\tp-parcial\tp-parcialversion1.1\primer parcial\submenuarticulo.h
+
+1652304030 c:\users\jason\documents\github\tp-parcial\tp-parcialversion1.1\primer parcial\submenuventas.h
+
+1652453142 c:\users\jason\documents\github\tp-parcial\tp-parcialversion1.1\primer parcial\submenureportes.h
+
+1652464171 c:\users\jason\documents\github\tp-parcial\tp-parcialversion1.1\primer parcial\submenuconfiguracion.h
+
+1652471561 source:c:\users\nahuel\downloads\tp-parcial-main\tp-parcialversion1.1\primer parcial\main.cpp
+	<iostream>
+	<cstring>
+	"Fecha.h"
+	"ClaseClientes.h"
+	"Clases.h"
+	"funcGlobalCli.h"
+	"ClaseVentas.h"
+	"Submenucliente.h"
+	"Submenuarticulo.h"
+	"Submenuventas.h"
+	"Submenureportes.h"
+	"Submenuconfiguracion.h"
+
+1652466418 c:\users\nahuel\downloads\tp-parcial-main\tp-parcialversion1.1\primer parcial\fecha.h
+
+1652466418 c:\users\nahuel\downloads\tp-parcial-main\tp-parcialversion1.1\primer parcial\claseclientes.h
+	"funcGlobalCli.h"
+
+1652466418 c:\users\nahuel\downloads\tp-parcial-main\tp-parcialversion1.1\primer parcial\funcglobalcli.h
+
+1652466418 c:\users\nahuel\downloads\tp-parcial-main\tp-parcialversion1.1\primer parcial\clases.h
+
+1652471602 c:\users\nahuel\downloads\tp-parcial-main\tp-parcialversion1.1\primer parcial\claseventas.h
+
+1652466418 c:\users\nahuel\downloads\tp-parcial-main\tp-parcialversion1.1\primer parcial\submenucliente.h
+
+1652466418 c:\users\nahuel\downloads\tp-parcial-main\tp-parcialversion1.1\primer parcial\submenuarticulo.h
+
+1652466418 c:\users\nahuel\downloads\tp-parcial-main\tp-parcialversion1.1\primer parcial\submenuventas.h
+
+1652466418 c:\users\nahuel\downloads\tp-parcial-main\tp-parcialversion1.1\primer parcial\submenureportes.h
+
+1652471628 c:\users\nahuel\downloads\tp-parcial-main\tp-parcialversion1.1\primer parcial\submenuconfiguracion.h
+
+1652644308 source:c:\users\axel\documents\github\tp-parcial\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\main.cpp
+	<iostream>
+	<cstring>
+	"Fecha.h"
+	"ClaseClientes.h"
+	"Clases.h"
+	"funcGlobalCli.h"
+	"ClaseFechaVentas.h"
+	"ClaseVentas.h"
+	"Submenucliente.h"
+	"Submenuarticulo.h"
+	"Submenuventas.h"
+	"Submenureportes.h"
+	"Submenuconfiguracion.h"
+
+1652472870 c:\users\axel\documents\github\tp-parcial\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\fecha.h
+
+1652472869 c:\users\axel\documents\github\tp-parcial\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\claseclientes.h
+	"funcGlobalCli.h"
+
+1652472870 c:\users\axel\documents\github\tp-parcial\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\funcglobalcli.h
+
+1652474305 c:\users\axel\documents\github\tp-parcial\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\clases.h
+
+1652644529 c:\users\axel\documents\github\tp-parcial\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\claseventas.h
+
+1652472870 c:\users\axel\documents\github\tp-parcial\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\submenucliente.h
+
+1652472870 c:\users\axel\documents\github\tp-parcial\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\submenuarticulo.h
+
+1652472870 c:\users\axel\documents\github\tp-parcial\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\submenuventas.h
+
+1652472870 c:\users\axel\documents\github\tp-parcial\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\submenureportes.h
+
+1652643672 c:\users\axel\documents\github\tp-parcial\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\submenuconfiguracion.h
+
+1652644327 c:\users\axel\documents\github\tp-parcial\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\clasefechaventas.h
+
+1652924297 source:c:\users\jason\documents\github\tp-parcial\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\main.cpp
+	<iostream>
+	<cstring>
+	<cstdio>
+	<string.h>
+	"ProtoFuncionesClases.h"
+	"Fecha.h"
+	"ClaseClientes.h"
+	"ClaseArticulo.h"
+	"funcGlobalCli.h"
+	"ClaseFechaVentas.h"
+	"ClaseVentas.h"
+	"Submenucliente.h"
+	"Submenuarticulo.h"
+	"Submenuventas.h"
+	"Submenureportes.h"
+	"Submenuconfiguracion.h"
+	"FuncionesClases.h"
+
+1652481044 c:\users\jason\documents\github\tp-parcial\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\fecha.h
+
+1652927018 c:\users\jason\documents\github\tp-parcial\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\claseclientes.h
+	"funcGlobalCli.h"
+
+1652906645 c:\users\jason\documents\github\tp-parcial\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\funcglobalcli.h
+
+1652923869 c:\users\jason\documents\github\tp-parcial\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\clases.h
+
+1652645050 c:\users\jason\documents\github\tp-parcial\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\clasefechaventas.h
+
+1652923869 c:\users\jason\documents\github\tp-parcial\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\claseventas.h
+
+1652481044 c:\users\jason\documents\github\tp-parcial\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\submenucliente.h
+
+1652900643 c:\users\jason\documents\github\tp-parcial\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\submenuarticulo.h
+
+1652481044 c:\users\jason\documents\github\tp-parcial\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\submenuventas.h
+
+1652481044 c:\users\jason\documents\github\tp-parcial\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\submenureportes.h
+
+1652922734 c:\users\jason\documents\github\tp-parcial\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\submenuconfiguracion.h
+
+1652924165 c:\users\jason\documents\github\tp-parcial\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\funcionesart.h
+
+1652917402 c:\users\jason\documents\github\tp-parcial\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\protofuncionesart.h
+
+1652924018 c:\users\jason\documents\github\tp-parcial\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\clasearticulo.h
+
+1652924255 c:\users\jason\documents\github\tp-parcial\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\protofuncionesclases.h
+
+1652924124 c:\users\jason\documents\github\tp-parcial\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\funcionesclases.h
+
+1652966770 source:c:\users\nahuel\downloads\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\main.cpp
+	<iostream>
+	<cstring>
+	<cstdio>
+	<string.h>
+	"ProtoFuncionesClases.h"
+	"Fecha.h"
+	"ClaseClientes.h"
+	"ClaseArticulo.h"
+	"funcGlobalCli.h"
+	"ClaseFechaVentas.h"
+	"ClaseVentas.h"
+	"Reportes.h"
+	"Submenucliente.h"
+	"Submenuarticulo.h"
+	"Submenuventas.h"
+	"Submenureportes.h"
+	"Submenuconfiguracion.h"
+	"FuncionesClases.h"
+
+1652927264 c:\users\nahuel\downloads\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\protofuncionesclases.h
+
+1652927264 c:\users\nahuel\downloads\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\fecha.h
+
+1652927264 c:\users\nahuel\downloads\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\claseclientes.h
+	"funcGlobalCli.h"
+
+1652927264 c:\users\nahuel\downloads\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\funcglobalcli.h
+
+1652927264 c:\users\nahuel\downloads\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\clasearticulo.h
+
+1652927264 c:\users\nahuel\downloads\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\clasefechaventas.h
+
+1657651460 c:\users\nahuel\downloads\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\claseventas.h
+
+1657571395 c:\users\nahuel\downloads\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\reportes.h
+
+1652968486 c:\users\nahuel\downloads\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\submenucliente.h
+
+1652927264 c:\users\nahuel\downloads\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\submenuarticulo.h
+
+1652927264 c:\users\nahuel\downloads\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\submenuventas.h
+
+1657571189 c:\users\nahuel\downloads\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\submenureportes.h
+
+1652966318 c:\users\nahuel\downloads\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\submenuconfiguracion.h
+
+1652927264 c:\users\nahuel\downloads\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\funcionesclases.h
+
+1657651763 source:c:\users\axel\documents\github\tp-parcial\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\main.cpp
+	<iostream>
+	<cstring>
+	<cstdio>
+	<string.h>
+	"ProtoFuncionesClases.h"
+	"Fecha.h"
+	"ClaseClientes.h"
+	"ClaseArticulo.h"
+	"funcGlobalCli.h"
+	"ClaseFechaVentas.h"
+	"ClaseVentas.h"
+	"Reportes.h"
+	"Submenucliente.h"
+	"Submenuarticulo.h"
+	"Submenuventas.h"
+	"Submenureportes.h"
+	"Submenuconfiguracion.h"
+	"FuncionesClases.h"
+
+1657651763 c:\users\axel\documents\github\tp-parcial\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\protofuncionesclases.h
+
+1657651763 c:\users\axel\documents\github\tp-parcial\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\fecha.h
+
+1657651763 c:\users\axel\documents\github\tp-parcial\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\claseclientes.h
+	"funcGlobalCli.h"
+
+1657651763 c:\users\axel\documents\github\tp-parcial\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\funcglobalcli.h
+
+1657651763 c:\users\axel\documents\github\tp-parcial\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\clasearticulo.h
+
+1657654688 c:\users\axel\documents\github\tp-parcial\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\clasefechaventas.h
+
+1657651763 c:\users\axel\documents\github\tp-parcial\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\claseventas.h
+
+1657740342 c:\users\axel\documents\github\tp-parcial\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\reportes.h
+
+1657651763 c:\users\axel\documents\github\tp-parcial\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\submenucliente.h
+
+1657651763 c:\users\axel\documents\github\tp-parcial\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\submenuarticulo.h
+
+1657651763 c:\users\axel\documents\github\tp-parcial\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\submenuventas.h
+
+1657740358 c:\users\axel\documents\github\tp-parcial\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\submenureportes.h
+
+1657651763 c:\users\axel\documents\github\tp-parcial\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\submenuconfiguracion.h
+
+1657651763 c:\users\axel\documents\github\tp-parcial\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\funcionesclases.h
+
+1657651763 source:c:\users\axel\desktop\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\main.cpp
+	<iostream>
+	<cstring>
+	<cstdio>
+	<string.h>
+	"ProtoFuncionesClases.h"
+	"Fecha.h"
+	"ClaseClientes.h"
+	"ClaseArticulo.h"
+	"funcGlobalCli.h"
+	"ClaseFechaVentas.h"
+	"ClaseVentas.h"
+	"Reportes.h"
+	"Submenucliente.h"
+	"Submenuarticulo.h"
+	"Submenuventas.h"
+	"Submenureportes.h"
+	"Submenuconfiguracion.h"
+	"FuncionesClases.h"
+
+1657651763 c:\users\axel\desktop\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\protofuncionesclases.h
+
+1657651763 c:\users\axel\desktop\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\fecha.h
+
+1657651763 c:\users\axel\desktop\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\claseclientes.h
+	"funcGlobalCli.h"
+
+1657651763 c:\users\axel\desktop\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\funcglobalcli.h
+
+1657651763 c:\users\axel\desktop\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\clasearticulo.h
+
+1657654688 c:\users\axel\desktop\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\clasefechaventas.h
+
+1657651763 c:\users\axel\desktop\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\claseventas.h
+
+1657740342 c:\users\axel\desktop\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\reportes.h
+
+1657651763 c:\users\axel\desktop\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\submenucliente.h
+
+1657651763 c:\users\axel\desktop\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\submenuarticulo.h
+
+1657651763 c:\users\axel\desktop\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\submenuventas.h
+
+1657740358 c:\users\axel\desktop\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\submenureportes.h
+
+1657651763 c:\users\axel\desktop\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\submenuconfiguracion.h
+
+1657651763 c:\users\axel\desktop\tp-parcial final v3\tp-parcial-main version 1.2\tp-parcialversion1.1\primer parcial\funcionesclases.h
+
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<FileVersion major="1" minor="0" />
+	<ActiveTarget name="Debug" />
+	<File name="Submenucliente.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1424" topLine="27" />
+		</Cursor>
+	</File>
+	<File name="Fecha.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="771" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Reportes.h" open="1" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1862" topLine="43" />
+		</Cursor>
+	</File>
+	<File name="Submenuventas.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="92" topLine="4" />
+		</Cursor>
+	</File>
+	<File name="ClaseFechaVentas.h" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="776" topLine="1" />
+		</Cursor>
+	</File>
+	<File name="FuncionesClases.h" open="1" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="111" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="ClaseArticulo.h" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1653" topLine="51" />
+		</Cursor>
+	</File>
+	<File name="Submenureportes.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="949" topLine="1" />
+		</Cursor>
+	</File>
+	<File name="ProtoFuncionesClases.h" open="1" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="124" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1053" topLine="18" />
+		</Cursor>
+	</File>
+	<File name="Submenuconfiguracion.h" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1299" topLine="15" />
+		</Cursor>
+	</File>
+	<File name="funcGlobalCli.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="360" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="ClaseVentas.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3892" topLine="206" />
+		</Cursor>
+	</File>
+	<File name="Submenuarticulo.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1441" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="ClaseClientes.h" open="1" top="1" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="7523" topLine="324" />
+		</Cursor>
+	</File>
+</CodeBlocks_layout_file>
+
+#ifndef PROTOFUNCIONESCLASES_H_INCLUDED
+#define PROTOFUNCIONESCLASES_H_INCLUDED
+int cantventas(char*);
+int DatosInicio();
+
+
+#endif // PROTOFUNCIONESCLASES_H_INCLUDED
+
+#ifndef REPORTES_H_INCLUDED
+#define REPORTES_H_INCLUDED
+///prototipos
+void mostrarVector(int v[], int tam);
+///fin prototipos
+class noVentas2021
+{
+    private:
+      int DNI;
+      Fecha fechaNacimiento;
+      char nombre[20], apellido[20], email [30];
+      char telefono[25];
+       bool estado;
+    public:
+        void setDNI (int d){DNI=d;}
+      void setfechaNacimiento(Fecha f){fechaNacimiento=f;}
+      void setNombre (const char *n){strcpy(nombre,n);}
+      void setApellido (const char *a){strcpy(apellido,a);}
+      void setEmail (const char *e){strcpy(email,e);}
+      void setTelefono (const char *t){strcpy(telefono,t);}
+      void setEstado(bool e){estado=e;}
+      ///gets()
+      int getDNI (){return DNI;}
+      Fecha getfechaNacimiento(){return fechaNacimiento;}
+      const char *getNombre (){return nombre;}
+      const char *getApellido (){return apellido;}
+      const char *getEmail (){return email;}
+      const char *getTelefono (){return telefono;}
+      bool getEstado(){return estado;}
+      ///disco
+      int leerEnDisco(int);
+      int grabarEnDisco()
+{
+    FILE *p;
+    p=fopen("reportes.dat","ab");
+    if (p==NULL) return -1;
+    int escribio=fwrite(this,sizeof(noVentas2021),1,p);
+    fclose(p);
+    return escribio;
+}
+
+void mostrarClientes()
+{
+    FILE *p;
+    p=fopen("reportes.dat","rb");
+    if (p==NULL) return;
+    while(fread(this,sizeof(noVentas2021),1,p)==1)
+    {
+        mostrar();
+    }
+    fclose(p);
+}
+
+void mostrar()
+{
+    if(estado==true)
+    {
+
+    cout<<"DNI: ";
+    cout<< DNI<<endl;
+    cout<<"NOMBRE: ";
+    cout<<nombre<<endl;
+    cout<<"APELLIDO: ";
+    cout<<apellido<<endl;
+    cout<<"TELEFONO: ";
+    cout<<telefono<<endl;
+    cout<<"EMAIL: ";
+    cout<<email<<endl;
+    fechaNacimiento.Mostrar();
+    cout<<endl;
+    }
+}
+};
+
+
+
+
+
+#endif // REPORTES_H_INCLUDED
+
+#ifndef SUBMENUARTICULO_H_INCLUDED
+#define SUBMENUARTICULO_H_INCLUDED
+void subMenuArt();
+
+
+void subMenuArt(){
+    int opc;
+    Articulo obj;
+    while(true){
+        system("cls");
+        cout<<"MENU CLIENTES"<<endl;
+        cout<<"-----------------------------"<<endl;
+        cout<<"1) AGREGAR ARTICULO "<<endl;
+        cout<<"2) LISTAR ARTICULO POR CODIGO"<<endl;
+        cout<<"3) LISTAR TODOS LOS ARTICULOS "<<endl;
+        cout<<"4) MODIFICAR PRECIO "<<endl;
+        cout<<"5) ELIMINAR ARTICULO"<<endl;
+        cout<<"-----------------------------"<<endl;
+        cout<<"0) VOLVER AL MENU PRINCIPAL "<<endl;
+        cout<<"SELECCIONE UNA DE LAS OPCIONES"<<endl;
+        cin>>opc;
+        system("cls");
+        switch(opc){
+            case 1:
+                    system("cls");
+                    obj.Cargar();
+                    if(obj.GrabarEnDisco()==1){cout<<"REGISTRO AGREGADO EXITOSAMENTE";}
+                    system("pause");
+                    system("cls");
+
+                    break;
+            case 2:
+                    system("cls");
+                    if(obj.ListarPorCodigo()==-1){cout<<"ESTE CODIGO NO EXISTE"<<endl;};
+
+                    break;
+            case 3:
+                    system("cls");
+                    obj.ListadoCompleto();
+                    break;
+            case 4:
+                    system("cls");
+                    obj.ModificarPrecio();
+
+                    break;
+            case 5:
+                    system("cls");
+                    obj.EliminarDeDisco();
+
+                    break;
+            case 0: return ;
+                    break;
+            default: cout<<"OPCION INCORRECTA"<<endl;
+                    break;
+        }
+        cout <<endl;
+        system("pause");
+    }
+
+
+
+
+
+}
+
+
+#endif // SUBMENUARTICULO_H_INCLUDED
