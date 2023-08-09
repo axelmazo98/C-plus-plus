@@ -1,2 +1,2 @@
 # C-plus-plus
-trabajos hechos a lo largo de mi cursada en la tecnicatura 
+Trabajo realizado el primer año en la cursada de la tecnicatura superior en programacion.
